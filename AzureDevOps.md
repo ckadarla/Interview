@@ -233,10 +233,11 @@ helm rollback <release-name> <revision>
 **A:** Handles HTTP/HTTPS traffic routing. Common ones: NGINX, Application Gateway Ingress Controller (AGIC), Traefik.
 
 **Q47. How do you apply a patch to a live K8s deployment?**  
+```
 ```bash
 kubectl patch deployment my-deploy -p '{"spec":{"replicas":4}}'
 ```
-
+```
 **Q48. What is KEDA and how is it used in AKS?**  
 **A:** Kubernetes-based Event Driven Autoscaler. Scales workloads based on external triggers like queues.
 
