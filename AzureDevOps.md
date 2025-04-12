@@ -248,20 +248,20 @@ kubectl patch deployment my-deploy -p '{"spec":{"replicas":4}}'
 
 ### Advanced AKS, DevSecOps & Governance
 
-** Q51. How does Azure AD integrate with AKS for authentication?
-A: AKS can be integrated with Azure AD using OIDC, enabling fine-grained RBAC control using Azure AD groups mapped to Kubernetes roles.
+****Q51. How does Azure AD integrate with AKS for authentication?
+**A: AKS can be integrated with Azure AD using OIDC, enabling fine-grained RBAC control using Azure AD groups mapped to Kubernetes roles.
 
-** Q52. What are Pod Security Admission policies?
-A: They enforce pod security standards (e.g., privileged, baseline, restricted) and replace PodSecurityPolicies in newer Kubernetes versions.
+**** Q52. What are Pod Security Admission policies?
+**A: They enforce pod security standards (e.g., privileged, baseline, restricted) and replace PodSecurityPolicies in newer Kubernetes versions.
 
-Q53. How can you secure traffic between microservices in AKS?
-A: Use mTLS with service mesh (Istio/Linkerd), network policies, and secure service-to-service authentication.
+**Q53. How can you secure traffic between microservices in AKS?
+**A: Use mTLS with service mesh (Istio/Linkerd), network policies, and secure service-to-service authentication.
 
-Q54. How do you implement container image scanning in the pipeline?
-A: Integrate tools like Trivy, Aqua, or Microsoft Defender for Containers as a pipeline task.
+**Q54. How do you implement container image scanning in the pipeline?
+A:** Integrate tools like Trivy, Aqua, or Microsoft Defender for Containers as a pipeline task.
 
-Q55. What is Azure Defender for Kubernetes?
-A: A security solution that detects threats, misconfigurations, and suspicious behaviors in AKS.
+**Q55. What is Azure Defender for Kubernetes?
+A:** A security solution that detects threats, misconfigurations, and suspicious behaviors in AKS.
 
 Q56. How can you control resource quotas and limits for namespaces?
 A: Use ResourceQuota and LimitRange objects to enforce boundaries and defaults.
