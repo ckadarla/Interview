@@ -248,10 +248,10 @@ kubectl patch deployment my-deploy -p '{"spec":{"replicas":4}}'
 
 ### Advanced AKS, DevSecOps & Governance
 
-**Q51. How does Azure AD integrate with AKS for authentication?
+** Q51. How does Azure AD integrate with AKS for authentication?
 A: AKS can be integrated with Azure AD using OIDC, enabling fine-grained RBAC control using Azure AD groups mapped to Kubernetes roles.
 
-**Q52. What are Pod Security Admission policies?
+** Q52. What are Pod Security Admission policies?
 A: They enforce pod security standards (e.g., privileged, baseline, restricted) and replace PodSecurityPolicies in newer Kubernetes versions.
 
 Q53. How can you secure traffic between microservices in AKS?
