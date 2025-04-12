@@ -1,7 +1,6 @@
 # Azure SRE Interview Questions and Answers
 
-This document provides a curated list of **50 technical interview questions and answers** tailored for a role focused on operating and 
-enhancing cybersecurity data lakes, platform engineering in Azure, and Site Reliability Engineering (SRE) principles.
+This document provides a curated list of **50 technical interview questions and answers** tailored for a role focused on operating and enhancing cybersecurity data lakes, platform engineering in Azure, and Site Reliability Engineering (SRE) principles.
 
 ---
 
@@ -18,8 +17,7 @@ enhancing cybersecurity data lakes, platform engineering in Azure, and Site Reli
 ## ✅ Top 50 Interview Questions & Answers
 
 ### 1. What is SRE and how does it apply to Azure?
-**Answer:** Site Reliability Engineering (SRE) applies software engineering to infrastructure and operations problems. In Azure, this involves 
-automation, reliability, observability, and resiliency of cloud services.
+**Answer:** Site Reliability Engineering (SRE) applies software engineering to infrastructure and operations problems. In Azure, this involves automation, reliability, observability, and resiliency of cloud services.
 
 ### 2. What are Azure Landing Zones?
 **Answer:** Pre-configured environments including networking, identity, and security baselines for scalable and compliant Azure adoption.
