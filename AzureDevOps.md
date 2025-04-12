@@ -246,6 +246,160 @@ kubectl patch deployment my-deploy -p '{"spec":{"replicas":4}}'
 **Q50. How do you ensure smooth collaboration between Dev and Ops teams?**  
 **A:** Use shared pipelines, clear documentation, DevOps culture, cross-functional syncs, and feedback loops.
 
----
+*** Advanced AKS, DevSecOps & Governance
 
-Let me know if you'd like this in a downloadable `.md` file or need it tailored further for a presentation, GitHub profile, or interview prep doc!
+Q51. How does Azure AD integrate with AKS for authentication?
+A: AKS can be integrated with Azure AD using OIDC, enabling fine-grained RBAC control using Azure AD groups mapped to Kubernetes roles.
+
+Q52. What are Pod Security Admission policies?
+A: They enforce pod security standards (e.g., privileged, baseline, restricted) and replace PodSecurityPolicies in newer Kubernetes versions.
+
+Q53. How can you secure traffic between microservices in AKS?
+A: Use mTLS with service mesh (Istio/Linkerd), network policies, and secure service-to-service authentication.
+
+Q54. How do you implement container image scanning in the pipeline?
+A: Integrate tools like Trivy, Aqua, or Microsoft Defender for Containers as a pipeline task.
+
+Q55. What is Azure Defender for Kubernetes?
+A: A security solution that detects threats, misconfigurations, and suspicious behaviors in AKS.
+
+Q56. How can you control resource quotas and limits for namespaces?
+A: Use ResourceQuota and LimitRange objects to enforce boundaries and defaults.
+
+Q57. What are Kubernetes PSP alternatives?
+A: Use OPA/Gatekeeper, Kyverno, and Pod Security Admission (PSA).
+
+Q58. How do you implement DevSecOps in Azure DevOps pipelines?
+A: Incorporate static code analysis, container scanning, secret detection, and IaC validation tools.
+
+Q59. What is the difference between Cluster Autoscaler and HPA?
+A: Cluster Autoscaler adds/removes nodes; HPA scales pods horizontally based on CPU/memory.
+
+Q60. How do you handle AKS cost optimization?
+A: Use autoscaling, spot nodes, right-size workloads, and schedule non-prod shutdowns.
+
+*** CI/CD Deep Dive & Templates
+
+Q61. What are reusable templates in Azure DevOps YAML?
+A: Templates allow modular, reusable pipeline logic using extends, steps, jobs, or stages.
+
+Q62. How do you conditionally execute stages in YAML?
+A: Use condition: property. Example: condition: eq(variables['Build.SourceBranch'], 'refs/heads/main')
+
+Q63. How do you manage approvals in multi-stage pipelines?
+A: Use environments and configure pre/post-deployment approvals in the UI.
+
+Q64. How do you cache dependencies in Azure DevOps?
+A: Use Cache@2 task to store/reuse dependencies between runs.
+
+Q65. What are self-hosted agents and why use them?
+A: Custom VMs used as build agents, often for performance, security, or custom software needs.
+
+Q66. How do you publish Helm charts in Azure DevOps?
+A: Use pipeline to package with helm package and push to ACR or an OCI registry.
+
+Q67. How do you use secureFile in Azure DevOps?
+A: Upload sensitive files (e.g., certs) to Library > Secure Files and reference in YAML.
+
+Q68. What is pipeline artifact vs build artifact?
+A: Pipeline artifacts are newer, faster, and support multi-stage sharing; build artifacts are legacy.
+
+Q69. How do you manage parallel deployments in YAML?
+A: Use dependsOn and matrix strategy to define parallel jobs or stages.
+
+Q70. How do you handle secrets in pipeline templates?
+A: Reference variables from Key Vault/Library groups. Avoid inlining secrets in template code.
+
+Real World Scenarios & Design Questions
+
+Q71. Describe how you would build a complete CI/CD workflow for a microservice in AKS.A: Build: lint → unit test → build Docker → scan → push to ACR → Helm package → deploy to AKS (dev → QA → prod with approvals).
+
+Q72. How do you implement blue/green or canary deployments in AKS?
+A: Use Kubernetes deployments with selectors, Ingress routing or service meshes like Istio for traffic splitting.
+
+Q73. How would you handle AKS logging and troubleshooting in production?
+A: Centralized logging with Azure Monitor, Prometheus/Grafana dashboards, alerts, and kubectl for local debug.
+
+Q74. How do you handle downtime during upgrades?
+A: Use rolling updates, pod disruption budgets, readiness probes, and avoid single-node pools.
+
+Q75. How do you recover from a broken deployment in AKS?
+A: Rollback via Helm/Kubernetes, check logs/events, scale replicas, or redeploy from previous version.
+
+Q76. What design considerations would you make for a multi-tenant AKS cluster?
+A: Namespace isolation, RBAC per tenant, resource quotas, network policies, and audit logging.
+
+Q77. How would you ensure image provenance and integrity in AKS?
+A: Use image signing (Cosign), ACR tasks, and only allow trusted registries.
+
+Q78. How do you audit changes made to Kubernetes resources?
+A: Use Azure Policy, audit logs from Kubernetes API server, and integrate with SIEM.
+
+Q79. How do you support developers with preview environments per PR?
+A: Use ephemeral environments via dynamic namespaces or Terraform preview with short TTL.
+
+Q80. How do you implement zero-downtime upgrades in AKS?
+A: Use rolling updates, health probes, keep min replicas running, and maintain session affinity.
+
+*** Final Concepts & Best Practices
+
+Q81. What is the difference between cluster-wide and namespace-wide RBAC?A: ClusterRole/ClusterRoleBinding is for global scope; Role/RoleBinding is namespace-scoped.
+
+Q82. What is a Kubernetes Job vs CronJob?
+A: Job runs once to completion; CronJob runs on a scheduled time.
+
+Q83. How do you handle node draining safely?
+A: Use kubectl drain --ignore-daemonsets --delete-emptydir-data, followed by workload rescheduling.
+
+Q84. What are affinity and anti-affinity rules?
+A: Define pod placement policies based on co-location (affinity) or separation (anti-affinity).
+
+Q85. How do you restrict pod execution on specific nodes?
+A: Use nodeSelectors, taints/tolerations, or affinity rules.
+
+Q86. How do you clean up unused resources in AKS
+A: Use TTL controllers, resource pruning scripts, and scheduled jobs.
+
+Q87. What is the benefit of using Azure CNI vs Kubenet?
+A: Azure CNI assigns VNet IPs for pods (more integration); Kubenet is simple but limited in IP management.
+
+Q88. How do you create a private AKS cluster?
+A: Use --enable-private-cluster in Terraform or CLI and ensure private DNS setup.
+
+Q89. What is the difference between DaemonSet and ReplicaSet?
+A: DaemonSet runs one pod per node; ReplicaSet maintains a defined number of replicas.
+
+Q90. What is workload identity in AKS?
+A: Allows Kubernetes workloads to authenticate with Azure services using federated identity instead of secrets.
+
+Q91. How do you test your Helm charts locally before deploying?
+A: Use helm lint, helm template, and helm install --dry-run.
+
+Q92. What is the purpose of .helmignore file?
+A: Excludes files from being packaged in Helm charts (like .git, README, etc.).
+
+Q93. What is the difference between Helm2 and Helm3?
+A: Helm3 removed Tiller, improved security, uses native K8s APIs, and supports better lifecycle hooks.
+
+Q94. What is Azure Container Apps vs AKS?
+A: Azure Container Apps is serverless and simpler for microservices; AKS is full K8s with more control and complexity.
+
+Q95. How do you encrypt secrets at rest in Kubernetes?
+A: Enable secret encryption providers in kube-apiserver config (handled by AKS automatically).
+
+Q96. What are mutating and validating admission controllers?
+A: Webhooks that modify (mutate) or validate resource specs before they are persisted.
+
+Q97. What is the use of a service mesh in AKS?
+A: Manages traffic, retries, observability, and security (e.g., Istio, Linkerd, Open Service Mesh).
+
+Q98. How do you perform backup and restore in AKS?
+A: Use tools like Velero for backing up volumes and resource definitions.
+
+Q99. How do you manage GitOps in AKS?
+A: Use Flux or ArgoCD to sync Git state to the cluster for declarative K8s management.
+
+Q100. What is your strategy for handling AKS incident response?
+A: Use runbooks, observability stack, diagnostics, audit logs, chaos testing, and documented procedures.
+
+
