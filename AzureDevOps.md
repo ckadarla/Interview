@@ -45,6 +45,7 @@ A curated list of **50 technical interview questions and answers** specifically 
 **A:** YAML pipelines are version-controlled, reusable, and portable. They support CI/CD as code and enable better collaboration and traceability.
 
 **Q2. How do you trigger a pipeline on branch push or pull request in YAML?**  
+```
 ```yaml
 trigger:
   branches:
@@ -64,7 +65,7 @@ pr:
   name: SetVar
   script: echo "##vso[task.setvariable variable=myVar;isOutput=true]Hello"
 ```
-
+```markdown
 **Q4. How do you secure secrets in Azure DevOps pipelines?**  
 **A:** Use variable groups linked to Azure Key Vault, mark secrets as sensitive, and avoid echoing them.
 
