@@ -1,4 +1,4 @@
-Senior Manager - DevOps Engineer
+### Senior Manager - DevOps Engineer
 
 Deploy infrastructure in Azure & AWS cloud using terraform and Infra-as-code best practices.
 
@@ -38,7 +38,7 @@ Participate in on-call rotation to support our NOC and incident management teams
 
 Deputy Director : Principal DevOps Tools Architect
 
-Responsibilities
+### Responsibilities
 
 Architecture & Design:
 Lead the design and implementation of end-to-end DevOps solutions, including continuous integration/continuous delivery (CI/CD) pipelines, infrastructure automation, cloud infrastructure, monitoring, and observability.
@@ -64,20 +64,6 @@ Manage cloud infrastructure on platforms such as AWS, Azure, or Google Cloud. En
 Security & Compliance:
 Implement and enforce security best practices throughout the development lifecycle. Ensure compliance with industry standards and regulations.
 
-Qualifications
-
-### Preferred Qualifications:
-
-14+ years of experience with DevOps
-
-Experience with hybrid and multi-cloud architectures.
-
-Familiarity with agile methodologies and the software development lifecycle (SDLC).
-
-DevOps certifications (e.g., AWS Certified DevOps Engineer, Azure DevOps Solutions Expert, Kubernetes certifications) are a plus.
-
-Proven track record of designing and implementing DevOps solutions using these tools at an enterprise scale.
-
 ### Technical Expertise:
 
 Deep experience with CI/CD tools (e.g., GitHub Enterprise, Azure DevOps, SonarQube, JFrog Artifactory, Figma, App Centre etc).
@@ -93,10 +79,4 @@ Proficient in scripting languages such as Python, Bash, or PowerShell.
 Expertise in monitoring and observability tools like Prometheus, Grafana, New Relic, or Datadog.
 
 Strong knowledge of security practices and tools in DevOps, including identity management, vulnerability scanning, and encryption techniques.
-
-Certifications –
-
-knowledge of SOC1, SOC 2, GDPR policies
-
-Azure DevOps Certification AZ-900, AZ-400
 
