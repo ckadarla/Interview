@@ -248,14 +248,14 @@ kubectl patch deployment my-deploy -p '{"spec":{"replicas":4}}'
 
 ### Advanced AKS, DevSecOps & Governance
 
-****Q51. How does Azure AD integrate with AKS for authentication?
-**A: AKS can be integrated with Azure AD using OIDC, enabling fine-grained RBAC control using Azure AD groups mapped to Kubernetes roles.
+**Q51. How does Azure AD integrate with AKS for authentication?
+A:** AKS can be integrated with Azure AD using OIDC, enabling fine-grained RBAC control using Azure AD groups mapped to Kubernetes roles.
 
-**** Q52. What are Pod Security Admission policies?
-**A: They enforce pod security standards (e.g., privileged, baseline, restricted) and replace PodSecurityPolicies in newer Kubernetes versions.
+**Q52. What are Pod Security Admission policies?
+A:** They enforce pod security standards (e.g., privileged, baseline, restricted) and replace PodSecurityPolicies in newer Kubernetes versions.
 
 **Q53. How can you secure traffic between microservices in AKS?
-**A: Use mTLS with service mesh (Istio/Linkerd), network policies, and secure service-to-service authentication.
+A:** Use mTLS with service mesh (Istio/Linkerd), network policies, and secure service-to-service authentication.
 
 **Q54. How do you implement container image scanning in the pipeline?
 A:** Integrate tools like Trivy, Aqua, or Microsoft Defender for Containers as a pipeline task.
@@ -263,22 +263,22 @@ A:** Integrate tools like Trivy, Aqua, or Microsoft Defender for Containers as a
 **Q55. What is Azure Defender for Kubernetes?
 A:** A security solution that detects threats, misconfigurations, and suspicious behaviors in AKS.
 
-Q56. How can you control resource quotas and limits for namespaces?
-A: Use ResourceQuota and LimitRange objects to enforce boundaries and defaults.
+**Q56. How can you control resource quotas and limits for namespaces?
+A:** Use ResourceQuota and LimitRange objects to enforce boundaries and defaults.
 
-Q57. What are Kubernetes PSP alternatives?
-A: Use OPA/Gatekeeper, Kyverno, and Pod Security Admission (PSA).
+**Q57. What are Kubernetes PSP alternatives?
+A:** Use OPA/Gatekeeper, Kyverno, and Pod Security Admission (PSA).
 
-Q58. How do you implement DevSecOps in Azure DevOps pipelines?
-A: Incorporate static code analysis, container scanning, secret detection, and IaC validation tools.
+**Q58. How do you implement DevSecOps in Azure DevOps pipelines?
+A:** Incorporate static code analysis, container scanning, secret detection, and IaC validation tools.
 
-Q59. What is the difference between Cluster Autoscaler and HPA?
-A: Cluster Autoscaler adds/removes nodes; HPA scales pods horizontally based on CPU/memory.
+**Q59. What is the difference between Cluster Autoscaler and HPA?
+A:** Cluster Autoscaler adds/removes nodes; HPA scales pods horizontally based on CPU/memory.
 
-Q60. How do you handle AKS cost optimization?
-A: Use autoscaling, spot nodes, right-size workloads, and schedule non-prod shutdowns.
+**Q60. How do you handle AKS cost optimization?
+A:** Use autoscaling, spot nodes, right-size workloads, and schedule non-prod shutdowns.
 
-*** CI/CD Deep Dive & Templates
+### CI/CD Deep Dive & Templates
 
 Q61. What are reusable templates in Azure DevOps YAML?
 A: Templates allow modular, reusable pipeline logic using extends, steps, jobs, or stages.
