@@ -39,8 +39,7 @@ A curated list of **50 technical interview questions and answers** specifically 
 6. [Security & Secrets Management](#security--secrets-management)
 7. [Troubleshooting & Best Practices](#troubleshooting--best-practices)
 
----
-
+```markdown
 ## CI/CD with Azure DevOps
 
 **Q1. What are the key benefits of using YAML pipelines over Classic in Azure DevOps?**  
@@ -403,3 +402,4 @@ A:** Use Flux or ArgoCD to sync Git state to the cluster for declarative K8s man
 
 **Q100. What is your strategy for handling AKS incident response?
 A:** Use runbooks, observability stack, diagnostics, audit logs, chaos testing, and documented procedures.
+```
