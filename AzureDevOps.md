@@ -1,3 +1,4 @@
+```markdown
 Design and implement CI/CD pipelines using Azure DevOps (YAML pipelines preferred) for microservices-based applications.
 
 Deploy, manage, and monitor applications in AKS (Azure Kubernetes Service).
@@ -19,9 +20,7 @@ Ensure security best practices across build, release, and runtime environments.
 Troubleshoot and resolve deployment and environment issues quickly and effectively.
 
 
-Awesome! Here's a tailored `README.md` with **50 Interview Questions and Answers** aligned with the responsibilities in the JD you provided — focusing on **Azure DevOps (YAML pipelines)**, **AKS**, **Helm/K8s**, **Terraform/Bicep/ARM**, **Azure Monitoring**, **Key Vault**, and more.
-
----
+```
 
 # 🚀 Azure DevOps + AKS Engineer – Interview Q&A
 
