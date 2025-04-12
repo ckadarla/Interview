@@ -4,6 +4,7 @@ Experience with Terraform for automating infrastructure deployment Hands on
 Experience with GKE cluster management and deploying workloads in the cluster Hands on Experience with Kubernetes network policies, GKE RBAC Policies, Role Bindings, Kubernetes Jobs, Kubernetes Logging & Monitoring etc.
 Hands on Experience with Istio service mesh with features like authentication , authorization , load balancing , routing ,virtual network route tables subnets , gateway , Configuring control plane , ingress gateway CI/CD - Hands-on experience with Jenkins or similar tools**
 
+```markdown
 ### Scripting - Bash or Python or Groovy
 
 
@@ -392,4 +393,4 @@ A: I use the kubernetes Python client to query pod status, resource usage via me
 
 **Q96:** How do you build a compliance check tool for Terraform in Bash?
 A: A script scans .tf files for non-compliant resources (e.g., public = true, missing versioning on buckets), outputs warnings, and blocks the PR via pre-commit hooks or CI job. Optionally, it runs tfsec or checkov.
-
+```
