@@ -246,12 +246,12 @@ kubectl patch deployment my-deploy -p '{"spec":{"replicas":4}}'
 **Q50. How do you ensure smooth collaboration between Dev and Ops teams?**  
 **A:** Use shared pipelines, clear documentation, DevOps culture, cross-functional syncs, and feedback loops.
 
-*** Advanced AKS, DevSecOps & Governance
+### Advanced AKS, DevSecOps & Governance
 
-Q51. How does Azure AD integrate with AKS for authentication?
+**Q51. How does Azure AD integrate with AKS for authentication?
 A: AKS can be integrated with Azure AD using OIDC, enabling fine-grained RBAC control using Azure AD groups mapped to Kubernetes roles.
 
-Q52. What are Pod Security Admission policies?
+**Q52. What are Pod Security Admission policies?
 A: They enforce pod security standards (e.g., privileged, baseline, restricted) and replace PodSecurityPolicies in newer Kubernetes versions.
 
 Q53. How can you secure traffic between microservices in AKS?
@@ -310,9 +310,10 @@ A: Use dependsOn and matrix strategy to define parallel jobs or stages.
 Q70. How do you handle secrets in pipeline templates?
 A: Reference variables from Key Vault/Library groups. Avoid inlining secrets in template code.
 
-Real World Scenarios & Design Questions
+*** Real World Scenarios & Design Questions
 
-Q71. Describe how you would build a complete CI/CD workflow for a microservice in AKS.A: Build: lint → unit test → build Docker → scan → push to ACR → Helm package → deploy to AKS (dev → QA → prod with approvals).
+*** Q71. Describe how you would build a complete CI/CD workflow for a microservice in AKS.
+A: Build: lint → unit test → build Docker → scan → push to ACR → Helm package → deploy to AKS (dev → QA → prod with approvals).
 
 Q72. How do you implement blue/green or canary deployments in AKS?
 A: Use Kubernetes deployments with selectors, Ingress routing or service meshes like Istio for traffic splitting.
