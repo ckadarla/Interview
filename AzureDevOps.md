@@ -126,7 +126,7 @@ helm install myapp ./mychart -f custom-values.yaml
 ```bash
 helm rollback <release-name> <revision>
 ```
-
+```markdown
 **Q19. What is a ConfigMap and when do you use it?**  
 **A:** A ConfigMap stores non-sensitive configuration as key-value pairs. Use it for app settings, env variables, etc.
 
