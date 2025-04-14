@@ -4,7 +4,6 @@ Experience with Terraform for automating infrastructure deployment Hands on
 Experience with GKE cluster management and deploying workloads in the cluster Hands on Experience with Kubernetes network policies, GKE RBAC Policies, Role Bindings, Kubernetes Jobs, Kubernetes Logging & Monitoring etc.
 Hands on Experience with Istio service mesh with features like authentication , authorization , load balancing , routing ,virtual network route tables subnets , gateway , Configuring control plane , ingress gateway CI/CD - Hands-on experience with Jenkins or similar tools**
 
-```markdown
 ### Scripting - Bash or Python or Groovy
 
 
