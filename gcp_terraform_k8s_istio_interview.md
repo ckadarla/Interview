@@ -8,20 +8,20 @@ Hands on Experience with Istio service mesh with features like authentication , 
 
 🔹 Google Cloud Platform (GCP) - VPCSC, IAM, Project
 
-**Q1:** What is VPC Service Controls and how have you used it?
+**Q1: What is VPC Service Controls and how have you used it?
 
-A: VPC Service Controls (VPCSC) is a GCP security feature that helps mitigate data exfiltration risks by creating a security perimeter around Google Cloud resources like BigQuery, Cloud Storage, etc. I’ve implemented VPCSC to enforce data boundaries, especially in sensitive environments, and defined service perimeters to allow access only from trusted networks and projects.
+A:** VPC Service Controls (VPCSC) is a GCP security feature that helps mitigate data exfiltration risks by creating a security perimeter around Google Cloud resources like BigQuery, Cloud Storage, etc. I’ve implemented VPCSC to enforce data boundaries, especially in sensitive environments, and defined service perimeters to allow access only from trusted networks and projects.
 
-**Q2:** How do you manage IAM policies in GCP?
+**Q2: How do you manage IAM policies in GCP?
 A:** I manage IAM through Terraform modules and follow the principle of least privilege. I use custom roles where necessary and bind roles at project, folder, and resource levels using google_project_iam_binding, google_project_iam_member, and google_project_iam_policy Terraform resources.
 
-**Q3:** How do you structure GCP projects in a multi-environment setup?
-A: I usually adopt a hierarchy using GCP folders and separate projects for dev, test, and prod environments. This supports resource isolation and billing clarity. Projects are managed via Terraform using the google_project resource.
+**Q3: How do you structure GCP projects in a multi-environment setup?
+A:** I usually adopt a hierarchy using GCP folders and separate projects for dev, test, and prod environments. This supports resource isolation and billing clarity. Projects are managed via Terraform using the google_project resource.
 
 🔹 Terraform
 
-**Q4:** Describe your experience automating infrastructure on GCP using Terraform.
-A: I use Terraform to provision GCP infrastructure, including VPCs, subnets, IAM, GKE clusters, and firewall rules. I modularize the code to enable reusability and implement remote state with locking using GCS and Google Cloud IAM.
+**Q4: Describe your experience automating infrastructure on GCP using Terraform.
+A:** I use Terraform to provision GCP infrastructure, including VPCs, subnets, IAM, GKE clusters, and firewall rules. I modularize the code to enable reusability and implement remote state with locking using GCS and Google Cloud IAM.
 
 **Q5:** How do you manage Terraform state securely?
 A: I use a GCS backend with versioning enabled and bucket-level IAM for access control. State locking is enabled via GCS object locking, and access is restricted via VPCSC and organization policies.
