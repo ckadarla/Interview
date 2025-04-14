@@ -9,7 +9,6 @@ Hands on Experience with Istio service mesh with features like authentication , 
 🔹 Google Cloud Platform (GCP) - VPCSC, IAM, Project
 
 **Q1: What is VPC Service Controls and how have you used it?
-
 A:** VPC Service Controls (VPCSC) is a GCP security feature that helps mitigate data exfiltration risks by creating a security perimeter around Google Cloud resources like BigQuery, Cloud Storage, etc. I’ve implemented VPCSC to enforce data boundaries, especially in sensitive environments, and defined service perimeters to allow access only from trusted networks and projects.
 
 **Q2: How do you manage IAM policies in GCP?
