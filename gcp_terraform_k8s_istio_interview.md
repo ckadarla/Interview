@@ -6,7 +6,6 @@ Hands on Experience with Istio service mesh with features like authentication , 
 
 ### Scripting - Bash or Python or Groovy
 
-
 🔹 Google Cloud Platform (GCP) - VPCSC, IAM, Project
 
 **Q1:** What is VPC Service Controls and how have you used it?
