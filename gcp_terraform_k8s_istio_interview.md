@@ -179,9 +179,6 @@ A: I wrote a Groovy script in a shared library that validates PR titles against 
 **Q45:** How would you use Python to interact with GCP APIs?
 A: Using the google-cloud Python libraries (like google.cloud.compute_v1 or googleapiclient.discovery), I automate tasks like spinning up Compute Engine VMs, updating firewall rules, or polling job statuses in BigQuery or Dataflow.
 
-Would you like me to assemble all these questions into a formatted PDF or Notion-friendly template for quick review? Or should I create a mock interview script next so you can practice live responses?
-
-Great! Let’s keep going with even more advanced, scenario-based questions and answers — touching on edge cases, real-life architecture decisions, security, and troubleshooting in each area from the JD:
 
 🔹 Google Cloud Platform (Governance & Compliance)
 
