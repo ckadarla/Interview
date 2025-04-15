@@ -1,4 +1,4 @@
-# Azure Solutions
+## Azure Solutions
 
 ## 1. **Compute Solutions**
 - **Azure Virtual Machines (VMs)**: Scalable and customizable compute resources for running Windows or Linux workloads.
@@ -74,7 +74,7 @@
 
 ---
 
-# Basic Findings Before Migrating to Azure
+### Basic Findings Before Migrating to Azure
 
 Before migrating workloads to Azure, it is essential to perform a detailed assessment and discovery of the current environment to ensure a successful and cost-effective migration. Below are the key areas to analyze:
 
