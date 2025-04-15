@@ -72,6 +72,86 @@
 | **Migration**           | Azure Migrate, Database Migration, Site Recovery  | Assessing, planning, and migrating to Azure |
 | **Business Analytics**  | Power BI, Analysis Services, Data Factory          | Data visualization and integration         |
 
+---
+
+# Basic Findings Before Migrating to Azure
+
+Before migrating workloads to Azure, it is essential to perform a detailed assessment and discovery of the current environment to ensure a successful and cost-effective migration. Below are the key areas to analyze:
+
+## 1. **Infrastructure Assessment**
+- Inventory of physical and virtual servers.
+- Operating systems, versions, and configurations.
+- Network topology and dependencies.
+- Existing virtualization platform (e.g., VMware, Hyper-V).
+
+## 2. **Application Assessment**
+- List of all applications and their architecture.
+- Application dependencies and communication paths.
+- Business criticality and usage patterns.
+- Licensing requirements and compatibility with Azure.
+
+## 3. **Database Assessment**
+- Inventory of all databases (SQL, Oracle, NoSQL, etc.).
+- Size, performance metrics, and growth trends.
+- Data residency and compliance needs.
+- Migration complexity and compatibility.
+
+## 4. **Storage Assessment**
+- Types of data (structured, unstructured, backups).
+- Size, performance, and access frequency.
+- File shares and data dependencies.
+- Data retention and archival policies.
+
+## 5. **Security & Compliance**
+- Current identity and access management systems.
+- Security baselines and compliance requirements (e.g., GDPR, HIPAA).
+- Data classification and encryption practices.
+- Existing firewalls, antivirus, and DLP tools.
+
+## 6. **Network Assessment**
+- Network bandwidth and latency to Azure.
+- Existing VPNs or ExpressRoute configurations.
+- Public IP usage and DNS architecture.
+- Firewall and NAT rules to be migrated.
+
+## 7. **Performance and Capacity**
+- Current resource utilization (CPU, Memory, IOPS).
+- Peak load and scalability requirements.
+- Performance bottlenecks or alerts in existing environment.
+
+## 8. **Cost Analysis**
+- Current on-premise TCO (Total Cost of Ownership).
+- Estimation of Azure resource consumption and pricing.
+- Reserved Instances vs Pay-as-you-go considerations.
+- License mobility and hybrid use benefits.
+
+## 9. **Tooling and Automation**
+- Identify migration tools (Azure Migrate, ASR, Database Migration Service).
+- Assess monitoring, logging, and backup tools compatibility.
+- Automation scripts or infrastructure-as-code (IaC) readiness.
+
+## 10. **Readiness and Skills**
+- Team's familiarity with Azure services and portal.
+- Required training or upskilling needs.
+- Support model and SLAs.
+- Stakeholder alignment and change management strategy.
+
+## Summary Checklist
+
+| Category             | Key Points to Evaluate                          |
+|----------------------|-------------------------------------------------|
+| Infrastructure       | Servers, OS, network topology                   |
+| Applications         | Architecture, dependencies, licensing           |
+| Databases            | Size, type, compatibility                       |
+| Storage              | Data type, performance, retention               |
+| Security             | IAM, compliance, encryption                     |
+| Networking           | Bandwidth, VPN, DNS                             |
+| Performance          | Utilization metrics, scalability                |
+| Cost                 | Current vs Azure TCO, licensing                 |
+| Tools                | Migration tools, automation readiness           |
+| Readiness            | Team skills, support, stakeholder involvement   |
+
+---
 ### Azure 5 R's Migration Model
 
 The Azure 5 R's model helps choose the right migration strategy for each application when moving to the cloud.
