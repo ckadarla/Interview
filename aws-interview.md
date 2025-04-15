@@ -217,11 +217,7 @@ AWS best practices for:
 - **Reliability**  
 - **Performance Efficiency**  
 - **Cost Optimization**  
-
 ---
-
-# **More Questions (26-100)**
-
 ### **26. What is AWS Direct Connect?**  
 **Answer:**  
 Dedicated network connection from on-premises to AWS (bypasses public internet).  
