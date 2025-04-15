@@ -98,6 +98,35 @@
 | Rebuild     | Full rewrite | Longest          | Very High              | Legacy apps need modernization          |
 | Replace     | None         | Varies           | Depends on SaaS        | When off-the-shelf SaaS is viable       |
 
+# Azure Virtual Network (VNet)
+
+**Azure Virtual Network (VNet)** is the fundamental building block for your private network in Azure. It enables secure communication between **Azure resources**, your **on-premises networks**, and the **internet**, similar to how traditional on-premises networks operate.
+
 ---
 
-Let me know if you'd like a diagram or flowchart to include in this Markdown!
+## 🔧 Key Features of Azure VNet
+
+| Feature                      | Description |
+|-----------------------------|-------------|
+| **Isolation**               | Each VNet is isolated from other VNets and networks by default. |
+| **Subnets**                 | VNets can be divided into subnets to organize and secure resources. |
+| **Private IPs**             | Resources within a VNet communicate using private IP addresses. |
+| **Routing**                 | Azure provides default routing and supports custom route tables. |
+| **Network Security Groups** | NSGs allow or deny traffic to/from resources based on security rules. |
+| **Service Endpoints**       | Securely connect to Azure services (e.g., Azure SQL, Storage) using the VNet. |
+| **Private Link**            | Provides private access to PaaS services over your VNet. |
+| **VNet Peering**            | Connect VNets across regions or subscriptions with high-speed links. |
+| **VPN Gateway**             | Establish a secure connection between your on-premises network and Azure. |
+| **ExpressRoute**            | Create a private, dedicated connection between your data center and Azure. |
+
+---
+
+## 🔄 Use Cases
+
+- Deploy applications that require **secure internal communication**.
+- Create **multi-tier application architectures** (e.g., web, app, and database tiers).
+- Enable **hybrid connectivity** between on-prem and Azure environments.
+- Provide **private access** to Azure services via Private Link.
+- Isolate and **secure workloads** using NSGs and Azure Firewall.
+
+---
