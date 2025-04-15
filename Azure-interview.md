@@ -75,7 +75,7 @@ The Azure 5 R's model helps choose the right migration strategy for each applica
 - Provide **private access** to Azure services via Private Link.
 - Isolate and **secure workloads** using NSGs and Azure Firewall.
 ---
-# Azure Virtual Machine Scale Sets (VMSS)
+### Azure Virtual Machine Scale Sets (VMSS)
 
 ## Overview
 Azure Virtual Machine Scale Sets (VMSS) allow you to deploy and manage a group of identical, load-balanced VMs. VMSS provides high availability, scalability, and automated VM management.
@@ -106,10 +106,8 @@ Azure Virtual Machine Scale Sets (VMSS) allow you to deploy and manage a group o
 - ARM / Bicep / Terraform
 - Integrated with Azure Monitor and Alerts
 
-## Example
-Deploy a VMSS with autoscale to handle fluctuating web traffic during peak hours and scale down during off-peak hours to save cost.
 ---
-# Types of Azure Storage
+## Types of Azure Storage
 
 Azure provides various storage options to meet different application needs. Below are the key types of storage services:
 
@@ -177,6 +175,5 @@ Azure provides various storage options to meet different application needs. Belo
 | **NetApp Files**           | Enterprise file storage            | File storage   | High IOPS, low latency               |
 | **Storage for AKS**        | Persistent storage for containers  | Block & file   | Supports containers and Kubernetes    |
 | **Archive Storage**        | Long-term, infrequent access       | Object storage | Low-cost, slow retrieval             |
-```
+---
 
-Let me know if you need any more details on a specific type!
