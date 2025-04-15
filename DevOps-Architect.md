@@ -1,4 +1,3 @@
-```markdown
 ### DevOps Interview Questions and Answers
 
 #### Infrastructure Design & Automation
