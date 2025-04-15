@@ -1,6 +1,3 @@
-Here is a detailed list of 100 AWS Architect interview questions and answers in Markdown (`.md`) format:
-
-```markdown
 # AWS Architect Interview Questions & Answers
 
 ## **Core AWS Services**
