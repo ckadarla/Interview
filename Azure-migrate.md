@@ -1,9 +1,3 @@
-# Azure 5 R’s Migration Model
-
-The **Azure 5 R’s Migration Model** is a framework to evaluate and plan the migration of on-premises workloads to Microsoft Azure. It helps organizations select the most appropriate strategy based on business goals, technical fit, and modernization needs.
-
----
-
 ## 1. Rehost (Lift and Shift)
 
 - **Definition**: Move applications to Azure without changes.
