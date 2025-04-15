@@ -1,103 +1,54 @@
+# Azure 5 R's Migration Model
+
+The Azure 5 R's model helps choose the right migration strategy for each application when moving to the cloud.
+
 ## 1. Rehost (Lift and Shift)
+- **Description**: Move applications to Azure VMs without code changes.
+- **Use Case**: Quick migration, minimal risk.
+- **Pros**: Fast and simple.
+- **Cons**: No cloud-native benefits.
+- **Tools**: Azure Migrate, Azure Site Recovery.
 
-- **Definition**: Move applications to Azure without changes.
-- **When to Use**:
-  - Need a quick migration.
-  - Compatible with Azure VMs.
-- **Tools**:
-  - Azure Migrate
-  - Azure Site Recovery
-- **Pros**:
-  - Fastest migration path.
-  - Minimal risk.
-- **Cons**:
-  - Doesn't leverage cloud-native features.
-  - Higher long-term operational cost.
-
----
-
-## 2. Refactor (Repackage / Lift, Tinker, and Shift)
-
-- **Definition**: Minor changes to apps (e.g., config updates, containerization) to run on Azure.
-- **When to Use**:
-  - Want to migrate to PaaS or containers.
-- **Tools**:
-  - Azure App Service
-  - Azure Kubernetes Service (AKS)
-  - Azure Container Apps
-- **Pros**:
-  - Better use of cloud capabilities.
-  - Easier to manage than VMs.
-- **Cons**:
-  - Some code/config changes required.
-  - More complex than rehost.
-
----
+## 2. Refactor (Repackage)
+- **Description**: Minor code/config changes to run apps on Azure PaaS/containers.
+- **Use Case**: Modernization without a full rewrite.
+- **Pros**: Better scalability and manageability.
+- **Cons**: Some development effort required.
+- **Tools**: Azure App Service, Azure Container Apps, AKS.
 
 ## 3. Rearchitect
+- **Description**: Modify application architecture for the cloud.
+- **Use Case**: Need for scalability, high availability, modernization.
+- **Pros**: Enables microservices, event-driven design.
+- **Cons**: Higher complexity and cost.
+- **Tools**: AKS, Azure Functions, Event Grid, Service Bus.
 
-- **Definition**: Modify app architecture for scalability, resilience, and cloud-native design.
-- **When to Use**:
-  - Existing architecture isn’t scalable or modern.
-- **Tools**:
-  - Azure Functions
-  - Azure Logic Apps
-  - Azure Kubernetes Service (AKS)
-  - Azure Event Grid / Service Bus
-- **Pros**:
-  - Cloud-native architecture benefits.
-  - Supports microservices.
-- **Cons**:
-  - Time-consuming and costly.
-  - Requires deeper expertise.
-
----
-
-## 4. Rebuild (Redesign / Rewrite)
-
-- **Definition**: Rebuild the app from scratch using cloud-native technologies.
-- **When to Use**:
-  - Legacy app is outdated or doesn’t meet needs.
-- **Tools**:
-  - Azure SQL
-  - Cosmos DB
-  - Azure Functions
-- **Pros**:
-  - Maximum cloud benefits.
-  - Opportunity for modern business needs.
-- **Cons**:
-  - High cost and effort.
-  - Potentially risky if mismanaged.
-
----
+## 4. Rebuild (Rewrite)
+- **Description**: Rebuild the app from scratch using cloud-native services.
+- **Use Case**: Legacy or outdated apps.
+- **Pros**: Fully optimized for the cloud.
+- **Cons**: Time-consuming and expensive.
+- **Tools**: Azure PaaS, Azure Functions, Cosmos DB.
 
 ## 5. Replace (Drop and Shop)
-
-- **Definition**: Replace app with SaaS solution.
-- **When to Use**:
-  - SaaS product satisfies the business requirement.
-- **Examples**:
-  - Dynamics 365 (ERP)
-  - Microsoft 365 (Email, Collaboration)
-- **Pros**:
-  - Rapid deployment.
-  - Low operational burden.
-- **Cons**:
-  - Limited customization.
-  - Vendor lock-in possible.
-
----
+- **Description**: Replace the application with a SaaS solution.
+- **Use Case**: When an off-the-shelf solution meets the need.
+- **Pros**: Low management overhead, quick to deploy.
+- **Cons**: Less control, vendor lock-in.
+- **Examples**: Microsoft 365, Dynamics 365.
 
 ## Summary Table
 
-| Strategy    | Code Changes | Time to Migrate | Cloud-Native Benefits | Use Case                                |
-|-------------|--------------|------------------|------------------------|-----------------------------------------|
-| Rehost      | None         | Fast             | Low                    | Quick migration, legacy apps            |
-| Refactor    | Minimal      | Moderate         | Moderate               | PaaS migration, minor tweaks            |
-| Rearchitect | Moderate     | Longer           | High                   | Microservices, scalable design          |
-| Rebuild     | Full rewrite | Longest          | Very High              | Legacy apps need modernization          |
-| Replace     | None         | Varies           | Depends on SaaS        | When off-the-shelf SaaS is viable       |
+| Strategy    | Code Changes | Migration Time | Cloud Benefits | Use Case                     |
+|-------------|--------------|----------------|----------------|------------------------------|
+| Rehost      | None         | Fast           | Low            | Legacy apps, quick move      |
+| Refactor    | Minimal      | Moderate       | Medium         | PaaS-ready apps              |
+| Rearchitect | Moderate     | Long           | High           | Apps needing modernization   |
+| Rebuild     | High         | Longest        | Very High      | Legacy apps, full redesign   |
+| Replace     | None         | Varies         | Depends on SaaS| SaaS-based replacements      |
+```
 
+Let me know if you'd like a visual or downloadable version too!
 # Azure Virtual Network (VNet)
 
 **Azure Virtual Network (VNet)** is the fundamental building block for your private network in Azure. It enables secure communication between **Azure resources**, your **on-premises networks**, and the **internet**, similar to how traditional on-premises networks operate.
