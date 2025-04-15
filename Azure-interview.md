@@ -108,3 +108,75 @@ Azure Virtual Machine Scale Sets (VMSS) allow you to deploy and manage a group o
 
 ## Example
 Deploy a VMSS with autoscale to handle fluctuating web traffic during peak hours and scale down during off-peak hours to save cost.
+---
+# Types of Azure Storage
+
+Azure provides various storage options to meet different application needs. Below are the key types of storage services:
+
+## 1. **Azure Blob Storage**
+- **Description**: Object storage for unstructured data, such as text, images, videos, and backups.
+- **Use Cases**: File storage, backups, data lakes, media storage.
+- **Tiers**: Hot, Cool, Archive.
+
+## 2. **Azure Disk Storage**
+- **Description**: Persistent block storage for Azure Virtual Machines.
+- **Use Cases**: OS disks, data disks, and high-performance workloads.
+- **Types**: Managed Disks (Standard SSD, Premium SSD, Standard HDD).
+
+## 3. **Azure File Storage**
+- **Description**: Fully managed file shares in the cloud, accessible via SMB (Server Message Block) protocol.
+- **Use Cases**: Lift-and-shift applications, shared storage for legacy apps.
+- **Features**: Azure File Sync, SMB support, Azure Active Directory integration.
+
+## 4. **Azure Queue Storage**
+- **Description**: Simple message queuing for communication between applications or components.
+- **Use Cases**: Decoupling workloads, async messaging, background task processing.
+- **Features**: Simple REST-based API, maximum message size up to 64 KB.
+
+## 5. **Azure Table Storage**
+- **Description**: NoSQL key-value store for storing structured, non-relational data.
+- **Use Cases**: Storing large amounts of structured data, application logs, metadata.
+- **Features**: Scalable, low-latency, NoSQL capabilities.
+
+## 6. **Azure Data Lake Storage**
+- **Description**: A specialized form of Blob Storage optimized for big data analytics.
+- **Use Cases**: Data lakes, analytics, and machine learning workloads.
+- **Features**: Hierarchical namespace, security, analytics-friendly.
+
+## 7. **Azure Blob Storage for Archive**
+- **Description**: Long-term, low-cost storage for data that is rarely accessed.
+- **Use Cases**: Archiving, compliance data storage, backups.
+- **Tiers**: Archive (lowest cost, slow access).
+
+## 8. **Azure NetApp Files**
+- **Description**: High-performance file storage service that supports NFS and SMB protocols.
+- **Use Cases**: Enterprise applications, SAP, databases requiring high throughput and low latency.
+- **Features**: High IOPS, low latency, scalable storage.
+
+## 9. **Azure Storage for Azure Kubernetes Service (AKS)**
+- **Description**: Persistent storage for containers running on AKS.
+- **Use Cases**: Containerized applications needing persistent storage.
+- **Types**: Azure Disk, Azure File, Azure Blob.
+
+## 10. **Azure Archive Storage**
+- **Description**: Cost-effective solution for long-term data retention with infrequent access.
+- **Use Cases**: Archiving, compliance requirements, backup data.
+- **Features**: Low cost, slow retrieval times, designed for "cold" storage.
+
+## Summary Table
+
+| Storage Type              | Use Case                            | Access Mode    | Key Feature                           |
+|---------------------------|-------------------------------------|----------------|---------------------------------------|
+| **Blob Storage**           | Unstructured data, backups         | Object storage | Scalable, cost-effective              |
+| **Disk Storage**           | Virtual Machine disks              | Block storage  | Managed disks, high-performance       |
+| **File Storage**           | SMB file shares                    | File storage   | SMB support, Azure File Sync         |
+| **Queue Storage**          | Message queuing                    | Queue storage  | Simple, REST-based API               |
+| **Table Storage**          | NoSQL, key-value data storage      | NoSQL storage  | Scalable, low-latency                |
+| **Data Lake Storage**      | Big data analytics                 | Object storage | Hierarchical namespace, analytics    |
+| **Blob Archive Storage**   | Long-term, infrequent access       | Object storage | Low-cost, infrequent access          |
+| **NetApp Files**           | Enterprise file storage            | File storage   | High IOPS, low latency               |
+| **Storage for AKS**        | Persistent storage for containers  | Block & file   | Supports containers and Kubernetes    |
+| **Archive Storage**        | Long-term, infrequent access       | Object storage | Low-cost, slow retrieval             |
+```
+
+Let me know if you need any more details on a specific type!
