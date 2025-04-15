@@ -1,6 +1,6 @@
-# DevOps Interview Questions and Answers
+### DevOps Interview Questions and Answers
 
-## Infrastructure Design & Automation
+#### Infrastructure Design & Automation
 
 **Q1: How do you design a highly available architecture on AWS?**  
 **A:** Use multiple Availability Zones for redundancy, Elastic Load Balancers for traffic distribution, Auto Scaling groups for scalability, and Route 53 for DNS failover.
