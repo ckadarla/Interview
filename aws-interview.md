@@ -221,23 +221,28 @@ AWS best practices for:
 
 ### **26. What is AWS Direct Connect?**  
 **Answer:**
-**Dedicated network connection from on-premises to AWS (bypasses public internet).  
+Dedicated network connection from on-premises to AWS (bypasses public internet).  
+
 ---
 ### **27. What is AWS WAF?**  
 **Answer:**  
 **Web Application Firewall** protects against SQL injection, XSS.  
+
 ---
 ### **28. What is AWS Shield?**  
 **Answer:**  
 DDoS protection service (Standard & Advanced tiers).  
+
 ---
 ### **29. What is AWS Organizations?**  
 **Answer:**  
 Manages multiple AWS accounts under a single master account.  
+
 ---
 ### **30. What is AWS Config?**  
 **Answer:**  
 Tracks resource configurations and compliance.  
+
 ---
 
 ### **Networking & Hybrid Cloud**
