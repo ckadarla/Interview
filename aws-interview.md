@@ -225,9 +225,7 @@ AWS best practices for:
 ### **26. What is AWS Direct Connect?**  
 **Answer:**  
 Dedicated network connection from on-premises to AWS (bypasses public internet).  
-
 ---
-
 ### **27. What is AWS WAF?**  
 **Answer:**  
 **Web Application Firewall** protects against SQL injection, XSS.  
