@@ -221,7 +221,7 @@ AWS best practices for:
 
 ### **26. What is AWS Direct Connect?**  
 **Answer:**
-Dedicated network connection from on-premises to AWS (bypasses public internet).  
+**Dedicated network connection from on-premises to AWS (bypasses public internet).  
 ---
 ### **27. What is AWS WAF?**  
 **Answer:**  
@@ -240,7 +240,7 @@ Manages multiple AWS accounts under a single master account.
 Tracks resource configurations and compliance.  
 ---
 
-## **Networking & Hybrid Cloud**
+### **Networking & Hybrid Cloud**
 
 ### **31. What is AWS Transit Gateway?**  
 **Answer:**  
