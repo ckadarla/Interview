@@ -218,8 +218,9 @@ AWS best practices for:
 - **Performance Efficiency**  
 - **Cost Optimization**  
 ---
+
 ### **26. What is AWS Direct Connect?**  
-**Answer:**  
+**Answer:**
 Dedicated network connection from on-premises to AWS (bypasses public internet).  
 ---
 ### **27. What is AWS WAF?**  
@@ -237,9 +238,6 @@ Manages multiple AWS accounts under a single master account.
 ### **30. What is AWS Config?**  
 **Answer:**  
 Tracks resource configurations and compliance.  
----
-Here’s the continuation of the **AWS Architect Q&A (Questions 31-100)** in `.md` format:
-
 ---
 
 ## **Networking & Hybrid Cloud**
