@@ -483,6 +483,166 @@ I am available to join within 15–30 days and can transition effectively by doc
 - [Azure SRE Best Practices](https://learn.microsoft.com/en-us/azure/well-architected/reliability/)
 
 ---
+```markdown
+# 🌐 Terraform with Azure – Interview-Focused Guide
+
+This guide covers key Terraform concepts and commands for managing Azure infrastructure, tailored for interview preparation and real-world use.
+
+---
+
+## 📌 Overview
+
+Terraform is an open-source Infrastructure as Code (IaC) tool by HashiCorp that allows you to define, provision, and manage Azure resources declaratively using HCL (HashiCorp Configuration Language).
+
+---
+
+## 🛠️ Prerequisites
+
+- Azure CLI installed and logged in (`az login`)
+- Terraform installed (`terraform -v`)
+- Azure subscription and resource group created
+
+---
+
+## 🔐 Azure Authentication in Terraform
+
+### Option 1: Azure CLI-based authentication (Default)
+Terraform automatically uses `az login` credentials.
+
+### Option 2: Service Principal Authentication
+```bash
+az ad sp create-for-rbac --name "terraform-sp" --role="Contributor" \
+  --scopes="/subscriptions/<sub-id>"
+
+# Capture the output and set the following environment variables:
+export ARM_CLIENT_ID="<appId>"
+export ARM_CLIENT_SECRET="<password>"
+export ARM_SUBSCRIPTION_ID="<subscriptionId>"
+export ARM_TENANT_ID="<tenant>"
 ```
 
-Let me know if you want a downloadable `.md` file or if you'd like to generate one from this content!
+---
+
+## 📁 Basic Terraform File Structure
+
+```hcl
+# provider.tf
+provider "azurerm" {
+  features {}
+}
+
+# variables.tf
+variable "location" {
+  default = "East US"
+}
+
+# main.tf
+resource "azurerm_resource_group" "rg" {
+  name     = "example-resources"
+  location = var.location
+}
+
+# outputs.tf
+output "resource_group_name" {
+  value = azurerm_resource_group.rg.name
+}
+```
+
+---
+
+## 🚀 Terraform Workflow with Azure
+
+```bash
+# 1. Initialize Terraform
+terraform init
+
+# 2. Validate configuration files
+terraform validate
+
+# 3. View execution plan
+terraform plan
+
+# 4. Apply changes
+terraform apply
+
+# 5. Destroy infrastructure
+terraform destroy
+```
+
+---
+
+## 🧱 Common Azure Resources Managed by Terraform
+
+| Resource Type | Terraform Block |
+|---------------|-----------------|
+| Resource Group | `azurerm_resource_group` |
+| Virtual Network | `azurerm_virtual_network` |
+| Subnet | `azurerm_subnet` |
+| Network Interface | `azurerm_network_interface` |
+| Virtual Machine | `azurerm_linux_virtual_machine` / `azurerm_windows_virtual_machine` |
+| Storage Account | `azurerm_storage_account` |
+| AKS Cluster | `azurerm_kubernetes_cluster` |
+| Key Vault | `azurerm_key_vault` |
+| App Service | `azurerm_app_service` |
+
+---
+
+## 🧩 Azure AKS Example (Terraform)
+
+```hcl
+resource "azurerm_kubernetes_cluster" "aks" {
+  name                = "aks-cluster"
+  location            = azurerm_resource_group.rg.location
+  resource_group_name = azurerm_resource_group.rg.name
+  dns_prefix          = "aks-demo"
+
+  default_node_pool {
+    name       = "default"
+    node_count = 2
+    vm_size    = "Standard_DS2_v2"
+  }
+
+  identity {
+    type = "SystemAssigned"
+  }
+
+  tags = {
+    Environment = "Dev"
+  }
+}
+```
+
+---
+
+## 🧠 Interview Tips
+
+- Explain **Terraform state**: stored locally or remotely (e.g., Azure Storage Account for remote backend)
+- Be ready to discuss **resource dependencies**, **modules**, and **outputs**
+- Understand **Terraform lifecycle**: `create_before_destroy`, `prevent_destroy`, etc.
+- Familiarize with **Terraform Cloud or Enterprise** for team collaboration
+- Discuss **idempotency**: Terraform ensures the same plan gives the same result
+
+---
+
+## 📚 Useful Terraform CLI Commands
+
+| Command | Description |
+|--------|-------------|
+| `terraform init` | Initialize working directory |
+| `terraform plan` | Show execution plan |
+| `terraform apply` | Apply changes to infrastructure |
+| `terraform destroy` | Remove infrastructure |
+| `terraform fmt` | Format Terraform files |
+| `terraform taint` | Mark resource for recreation |
+| `terraform import` | Import existing resource into state |
+| `terraform state` | Manage Terraform state file |
+
+---
+
+## 📎 Resources
+
+- [Terraform Azure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
+- [Terraform Official Docs](https://developer.hashicorp.com/terraform)
+- [Azure Terraform Samples](https://github.com/Azure/terraform)
+
+---
