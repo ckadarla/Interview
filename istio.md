@@ -1,13 +1,15 @@
 ```markdown
 # 🚀 Istio Quick Reference – Brief Explanation for Interviews
 
-Istio is a **service mesh** that provides advanced traffic management, observability, security, and policy enforcement for microservices on Kubernetes and beyond.
+Istio is a **service mesh** that provides advanced traffic management, observability, security,
+and policy enforcement for microservices on Kubernetes and beyond.
 
 ---
 
 ## 🔧 What is a Service Mesh?
 
-A **service mesh** is an infrastructure layer that handles service-to-service communication **transparently**. It abstracts **networking logic** like retries, failovers, load balancing, etc.
+A **service mesh** is an infrastructure layer that handles service-to-service communication
+**transparently**. It abstracts **networking logic** like retries, failovers, load balancing, etc.
 
 ---
 
