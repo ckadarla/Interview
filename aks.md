@@ -44,6 +44,173 @@ Azure Kubernetes Service (AKS) is a managed Kubernetes offering from Microsoft A
 - **Kubernetes-native features** are part of the open-source Kubernetes project and can run on any conformant cluster.
 - **AKS Add-ons** are tightly integrated with the Azure ecosystem, offering enhanced ease of use, scalability, and security with minimal configuration overhead.
 
-Using AKS gives teams a balance between the power of Kubernetes and the productivity of a managed, cloud-native platform.
+
+### 💻 AKS Commands & Usage – Interview Reference Guide
+
+This cheat sheet covers essential AKS commands and usage examples useful for interviews and day-to-day tasks.
+
+---
+
+## 🔧 Cluster Management
+
+### Create an AKS Cluster
+```bash
+az aks create \
+  --resource-group <resource-group> \
+  --name <cluster-name> \
+  --node-count 3 \
+  --enable-addons monitoring \
+  --enable-managed-identity \
+  --generate-ssh-keys
+```
+
+### Get AKS Credentials (Kubeconfig)
+```bash
+az aks get-credentials \
+  --resource-group <resource-group> \
+  --name <cluster-name>
+```
+
+### View Cluster Details
+```bash
+az aks show \
+  --resource-group <resource-group> \
+  --name <cluster-name> \
+  --output table
+```
+
+### Delete Cluster
+```bash
+az aks delete \
+  --resource-group <resource-group> \
+  --name <cluster-name> \
+  --yes --no-wait
+```
+
+---
+
+## 🔐 Identity & Access
+
+### Enable Azure AD Integration (when creating cluster)
+```bash
+az aks create \
+  --enable-aad \
+  --aad-admin-group-object-ids <group-id>
+```
+
+### List Cluster Admin Credentials
+```bash
+az aks get-credentials \
+  --admin \
+  --resource-group <resource-group> \
+  --name <cluster-name>
+```
+
+---
+
+## 📦 Node Pool Operations
+
+### Add a Node Pool
+```bash
+az aks nodepool add \
+  --resource-group <resource-group> \
+  --cluster-name <cluster-name> \
+  --name <nodepool-name> \
+  --node-count 2 \
+  --node-vm-size Standard_DS2_v2
+```
+
+### Scale Node Pool
+```bash
+az aks nodepool scale \
+  --resource-group <resource-group> \
+  --cluster-name <cluster-name> \
+  --name <nodepool-name> \
+  --node-count 5
+```
+
+### Upgrade Node Pool
+```bash
+az aks nodepool upgrade \
+  --resource-group <resource-group> \
+  --cluster-name <cluster-name> \
+  --name <nodepool-name> \
+  --kubernetes-version <version>
+```
+
+---
+
+## 📊 Monitoring & Logs
+
+### Enable Monitoring Add-on
+```bash
+az aks enable-addons \
+  --resource-group <resource-group> \
+  --name <cluster-name> \
+  --addons monitoring
+```
+
+### View Logs Using Azure Monitor
+Navigate to Azure Portal → Monitor → Logs → Select AKS workspace.
+
+---
+
+## 🔄 Upgrades & Versions
+
+### View Available Kubernetes Versions
+```bash
+az aks get-versions \
+  --location <region> \
+  --output table
+```
+
+### Upgrade Cluster Control Plane
+```bash
+az aks upgrade \
+  --resource-group <resource-group> \
+  --name <cluster-name> \
+  --kubernetes-version <version> \
+  --yes
+```
+
+---
+
+## 🧪 Useful `kubectl` Commands with AKS
+
+### List Nodes
+```bash
+kubectl get nodes
+```
+
+### Get Pods in All Namespaces
+```bash
+kubectl get pods -A
+```
+
+### Describe a Pod
+```bash
+kubectl describe pod <pod-name> -n <namespace>
+```
+
+### View Events
+```bash
+kubectl get events -A --sort-by='.metadata.creationTimestamp'
+```
+
+---
+
+## ✅ Best Practices for Interview
+
+- Always mention **`az aks get-credentials`** as the first step to interact with the cluster.
+- Explain the difference between **admin** and **user** credentials.
+- Know how to **scale**, **upgrade**, and **secure** the cluster.
+- Highlight Azure-native integrations like **Azure Monitor**, **Azure Policy**, and **Azure AD**.
+
+---
+
+## 📎 References
+
+- [AKS Documentation](https://learn.microsoft.com/en-us/azure/aks/)
+- [Azure CLI AKS Commands](https://learn.microsoft.com/en-us/cli/azure/aks)
 
 ---
