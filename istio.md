@@ -1,4 +1,4 @@
-```markdown
+
 # 🚀 Istio Quick Reference – Brief Explanation for Interviews
 
 Istio is a **service mesh** that provides advanced traffic management, observability, security,
@@ -136,7 +136,4 @@ spec:
 - [Istio Architecture](https://istio.io/latest/docs/architecture/)
 - [Istio GitHub](https://github.com/istio/istio)
 
----
 
-Let me know if you want a visual diagram or real-time use-case walkthroughs!
-```
