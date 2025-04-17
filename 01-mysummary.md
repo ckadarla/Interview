@@ -1,20 +1,18 @@
-```
 ### Career Brief:
 DevOps Engineer with 19+ years of IT experience, specializing in 10+ years of DevOps and
 6 years of Kubernetes with Containerization & Container security,
 and extensive expertise in AWS, Azure, and Google Cloud. Proven leader in modernizing application stacks,
 architecting secure cloud infrastructures, and driving automation. Skilled in CI/CD, team collaboration,
 and strategic cost optimization and compliance with company DevSecOps practices and cloud strategy.
-```
-```
+
 ### Objective:
 As a seasoned Senior Technical and DevOps Manager/Lead, I aim to drive innovation and efficiency in a dynamic organization.
 With extensive experience in cutting-edge technologies and scalable, secure virtualization systems,
 I'm dedicated to accelerating growth and optimizing performance. My collaborative approach ensures the
 delivery of infrastructure solutions that meet business objectives. Ready to adapt to evolving technology and
 contribute to a forward-thinking company's success.
-```
-```
+
+
 ### Professional Summary:
 •	Cloud Technology Proficiency: Extensive experience across AWS, Google Cloud, and Azure. Proficient in AWS Batch,
 Lambda, CloudFormation, EC2, S3, ELB, VPC,,EKS, ECS  etc. Skilled in Google Cloud services like Compute Engine,
