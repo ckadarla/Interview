@@ -181,9 +181,9 @@ A:** I prefer open-source for flexibility and innovation, especially in early-st
 **Q30. How do you ensure platform reliability in large-scale systems?
 A:** By designing for redundancy, practicing chaos engineering, enforcing SLIs/SLOs, and conducting regular game days. I also ensure strong incident response processes.
 
-**Q1: What strategies do you use to ensure 99.99% uptime of build and deployment platforms?
+Q31: What strategies do you use to ensure 99.99% uptime of build and deployment platforms?
 
-A:** We implement multi-region redundancy, proactive monitoring (Prometheus/Grafana), automated failovers, incident response playbooks, and continuous testing to ensure availability. We also use SLOs/SLAs and perform regular DR drills.
+A: We implement multi-region redundancy, proactive monitoring (Prometheus/Grafana), automated failovers, incident response playbooks, and continuous testing to ensure availability. We also use SLOs/SLAs and perform regular DR drills.
 
 Q2: How do you simplify the debugging experience for developers?
 
