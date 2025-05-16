@@ -1,3 +1,25 @@
+Challenges with Microservices:
+➤ No Encryption
+➤ No Load Balancing
+➤ No Failover / Auto Retries
+➤ Routing Decisions
+➤ Load Metrics/ Logs
+➤ Access Control to Services
+
+### Istio service mesh provides several capabilities for traffic
+monitoring, access control, discovery, security, resiliency, and
+other useful things to a bundle of services.
+### Istio deployed for Micro Services without any change in code
+of Micro Service.
+### To make this possible, Istio deploys an Istio proxy (called an
+Istio sidecar) next to each service.
+### All of the traffic meant for assistance is directed to the
+proxy, which uses policies to decide how, when, or if that
+traffic should be deployed to the service
+### Istio service mesh, as suggested, uses a sidecar container
+implementation of the features and functions required mainly
+for microservices.
+
 
 # 🚀 Istio Quick Reference – Brief Explanation for Interviews
 
