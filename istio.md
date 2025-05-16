@@ -1,9 +1,14 @@
 ### Challenges with Microservices:
 ** No Encryption
+
 ** No Load Balancing
+
 ** No Failover / Auto Retries
+
 ** Routing Decisions
+
 ** Load Metrics/ Logs
+
 ** Access Control to Services
 
 ### Istio service mesh provides several capabilities for traffic
