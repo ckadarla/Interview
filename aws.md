@@ -31,11 +31,14 @@ Migrating from on-premises (on-prem) environments to the cloud is a common strat
    - In a hybrid cloud approach, organizations maintain some workloads on-premises while migrating others to the cloud.
    - Hybrid cloud setups allow for gradual migration and can be used when some data or services must remain on-premises due to regulatory or operational constraints.
 
-The choice of migration approach depends on factors such as the specific goals of the migration, budget, timeline, and the nature of the workloads. Often, organizations will use a combination of these approaches for different applications and services within their migration strategy. It's crucial to plan carefully, assess the current environment thoroughly, and consider the long-term objectives of the organization when choosing a migration path.What’s EKS?
+### The choice of migration approach depends on factors such as the specific goals of the migration, budget, timeline, and the nature of the workloads. Often, organizations will use a combination of these approaches for different applications and services within their migration strategy. It's crucial to plan carefully, assess the current environment thoroughly, and consider the long-term objectives of the organization when choosing a migration path.What’s EKS?
+
 I don’t want to spend too much time here. As I explained previously, EKS is the offering from AWS to have a Kubernetes managed cluster. AWS takes care of the master control plane, and you take care of the worker nodes. Nothing new here in comparison to the main AWS competitors, Azure and Google Cloud. However, in AWS, users have to pay $0.10 per hour for every master control plane, or around $75 per month. And of course, you continue paying the normal rate for all the resources you create like load balancers, storage, or EC2 instances.
 EKS integrates very well with other AWS services like IAM to manage users, native networking with VPC, or AWS ALB for ingress objects. Additionally, you can integrate EKS with Fargate to create pods on demand without having to provision EC2 worker nodes. There are too many topics I could cover, but today I’ll focus only on how to get started with EKS. You can learn more about EKS from their official docs site.
 Let’s get into the details on how to get started creating Kubernetes clusters using EKS.
-Prerequisites
+
+### Prerequisites
+
 You need to spend some time preparing your environment for this guide, especially when configuring the IAM user or role to create the EKS cluster. But don’t worry. I’ll give you the details of everything you need to do in your AWS account. However, you need to have some basic knowledge with AWS with services like VPC, CloudFormation, and IAM. You can find every template I’ll use in GitHub in case something isn’t crystal clear.
 So, here’s the list of steps you need to follow before you can start with this guide:
 
@@ -45,7 +48,9 @@ Install the latest version of the AWS CLI and configure the credentials with the
 Create an IAM role that the EKS cluster will use to create resources in AWS like an ALB. You can find the CloudFormation template in GitHub that includes the minimum permissions for this role.
 Install the latest version of kubectl.
 Once you have everything from the above list ready, you can continue. You can use the AWS console, Terraform, CloudFormation, or even the CLI to provision a cluster. In this guide, I’ll start with the console to explain critical concepts graphically. Then I’ll use Terraform to provision a cluster in an automated fashion.
-Create an EKS Cluster with the AWS Console
+
+### Create an EKS Cluster with the AWS Console
+
 1. Create the EKS Cluster
 Head over to the EKS console, and make sure you’re in the “Amazon EKS” section (1 in the graphic below). Then type the name you want to use for the cluster (2) and click on the “Next step” button (3).
  
@@ -98,10 +103,14 @@ AWS will take around 10 minutes to have the worker nodes ready. You can always c
 Once the worker nodes are running, you can confirm that they’re registered to the Kubernetes cluster. If you configured SSH access, you should be able to connect to the cluster as well.
  
 And that’s it. You can start using your Kubernetes cluster and deploy your applications in it.
-Create an EKS Cluster Using Terraform
+
+### Create an EKS Cluster Using Terraform
+
 Another way to create an EKS cluster is by using Terraform. If you’ve followed the previous section to create the cluster using the AWS console, then this section will be pretty straightforward. All the Terraform templates I’m using are in GitHub as well. In this case, I’ll use self-managed worker nodes. You won’t see the nodes connected from the EKS console page, but you’ll have more control over them through the Terraform templates. Also, I’m going to cover only the concepts you need to get started. If you want to go deeper, take a look at the official Terraform site.
 I include the steps you need to follow below. Let’s get started.
+
 1. Prerequisites
+
 You’ll still need to follow the general prerequisites from the beginning of this guide. And here are the additional specific prerequisites you’ll need if you want to go ahead with the Terraform approach.
 Download and install the latest version of the Terraform binary.
 Attach the appropriate IAM permissions Terraform needs to the user or role you created to administer EKS clusters. To do so, create a new IAM policy. You can find the JSON policy template you need in GitHub. Then attach this policy to the EKS administrator user or role.
@@ -154,17 +163,15 @@ data "aws_eks_cluster_auth" "cluster" {
 To create all the resources, including the Kubernetes cluster, the worker nodes, the VPC, subnets, and security groups, simply run the following command and confirm you want to create all the 47 resources:
 terraform apply
 You should see something like this:
- 
-AWS will take around 10 to 15 minutes to have everything ready, so keep calm and relax.
-When it’s done, you should be able to see the outputs of the template, like this:
- 
+
 4. Connect to the Cluster
 You should be able to connect to the cluster now. In this case, I created a cluster with public access, even though I wouldn’t recommend it under any circumstances for security reasons, not even for a development environment. However, for the sake of starting quickly and learning, it’s OK. I’m assuming you’re going to use the same workstation you used to create the cluster, so no need to configure the AWS CLI again because it’s already using the credentials for the EKS admin IAM user or role.
 You need a kubeconfig file to connect to the cluster. To generate one, use the AWS CLI. If you already have a kubeconfig file, the CLI will append the data and switch the context to the new cluster. Simply run the following command (and make sure you use the region and cluster name from the Terraform outputs in the previous step):
 aws eks --region eu-west-1 update-kubeconfig --name eks-terraform-HgHCjhRM
 You should be able now to run any kubectl command, like this:
  
-As an AWS architect, there are several best practices that you should keep in mind to design and maintain a secure, scalable, and cost-effective cloud infrastructure. Some of the best practices are:
+### As an AWS architect, there are several best practices that you should keep in mind to design and
+### maintain a secure, scalable, and cost-effective cloud infrastructure. Some of the best practices are:
 
 1. Use a multi-account strategyUse multiple AWS accounts for different environments like development, testing, staging, and production. This will isolate resources and provide greater control and security.
 
@@ -186,10 +193,8 @@ As an AWS architect, there are several best practices that you should keep in mi
 
 10. Use encryption for data securityUse AWS Key Management Service (KMS) to encrypt your data at rest and in transit to protect sensitive data.
 
-These are some of the best practices that you can follow as an AWS architect to design and maintain a secure, scalable, and cost-effective cloud infrastructure.
 
-
-Cost optimization is a critical aspect of cloud computing and is important for businesses to achieve operational efficiency and cost savings. Here are some common strategies for cost optimization in AWS:
+### Cost optimization is a critical aspect of cloud computing and is important for businesses to achieve operational efficiency and cost savings. Here are some common strategies for cost optimization in AWS:
 
 1. Use Reserved Instances (RIs)RIs allow you to reserve capacity for a one- or three-year term and offer significant discounts compared to on-demand pricing.
 
@@ -210,7 +215,9 @@ Cost optimization is a critical aspect of cloud computing and is important for b
 9. Use serverless technologiesServerless technologies such as AWS Lambda can help you optimize costs by eliminating the need for managing and provisioning servers.
 
 10. Use multi-tenant architectureUsing multi-tenant architecture can help you optimize costs by sharing resources across multiple tenants or users.
-What are AWS and what are its benefits?
+
+### What are AWS and what are its benefits?
+
 AWS (Amazon Web Services) is a cloud computing platform that provides a wide range of services, including computing, storage, and networking. Some benefits of AWS include flexibility, scalability, security, cost-effectiveness, and ease of use.
 In AWS, a landing zone is a pre-configured, secure, multi-account environment designed to quickly set up a standardized, secure, multi-account AWS environment. It is intended to be a starting point for establishing a secure, multi-account AWS environment, with AWS best practices and recommendations for security, operations, and compliance.
 
@@ -235,85 +242,86 @@ Once the VPC is created, you can create the following components:
 4. Network ACLsA network access control list (ACL) is an optional layer of security that acts as a firewall for controlling traffic in and out of a subnet. To create a network ACL, go to the VPC console, click on the "Network ACLs" option, and then click on the "Create Network ACL" button. Specify the network ACL name, VPC ID, and inbound/outbound rules.
 
 By creating these components, you can configure your VPC to meet your specific requirements.
-What is AWS Lambda?
+
+### What is AWS Lambda?
 AWS Lambda is a serverless computing service from AWS that allows you to run code without provisioning or managing servers. You simply upload your code and AWS Lambda takes care of everything else, including scaling, security, and availability.
-What is AWS CloudFormation?
+### What is AWS CloudFormation?
 AWS CloudFormation is a service that allows you to define and provision AWS infrastructure as code. It enables you to create and manage AWS resources using templates, which are written in JSON or YAML format.
-What is Amazon S3?
+### What is Amazon S3?
 Amazon S3 (Simple Storage Service) is a cloud-based storage service that provides highly scalable and durable object storage. It can be used to store and retrieve any amount of data, at any time, from anywhere on the web.
-What is Amazon VPC?
+### What is Amazon VPC?
 Amazon VPC (Virtual Private Cloud) is a service that allows you to create and manage a virtual network in the cloud. It provides a private, isolated section of the AWS cloud where you can launch AWS resources in a virtual network that you define.
-What is Amazon EC2?
+### What is Amazon EC2?
 Amazon EC2 (Elastic Compute Cloud) is a web service that provides resizable compute capacity in the cloud. It enables you to launch virtual servers in the cloud, called instances, with a variety of operating systems, configurations, and security settings.
-What is Amazon Route 53?
+### What is Amazon Route 53?
 Amazon Route 53 is a scalable and highly available Domain Name System (DNS) web service that routes end users to Internet applications by translating domain names into IP addresses.
-What is AWS Elastic Load Balancing?
+### What is AWS Elastic Load Balancing?
 AWS Elastic Load Balancing is a service that distributes incoming traffic across multiple targets, such as EC2 instances, containers, and IP addresses. It provides high availability, scalability, and fault tolerance for applications running in the cloud.
-What is AWS Auto Scaling?
+### What is AWS Auto Scaling?
 AWS Auto Scaling is a service that automatically scales resources, such as EC2 instances, based on demand. It helps you optimize performance and reduce costs by automatically adding or removing instances as needed to maintain the desired level of performance.
-What is AWS CloudTrail?
+### What is AWS CloudTrail?
 AWS CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your AWS account. It provides a detailed history of AWS API calls, including who made the call, when they made it, and which resources were affected.
-What is AWS Identity and Access Management (IAM)?
+### What is AWS Identity and Access Management (IAM)?
 AWS Identity and Access Management (IAM) is a web service that helps you securely control access to AWS resources. It enables you to create and manage users, groups, and permissions to allow or deny access to AWS resources.
-What is AWS KMS?
+### What is AWS KMS?
 AWS KMS (Key Management Service) is a service that makes it easy to create and manage encryption keys in the cloud. It provides a secure way to encrypt data and control access to encrypted data in your applications and AWS services.
-What is AWS CloudWatch?
+### What is AWS CloudWatch?
 AWS CloudWatch is a monitoring and observability service that provides metrics, logs, and alarms for AWS resources and applications. It enables you to collect and track metrics, collect and monitor log files, and set alarms to help you troubleshoot issues and respond to events.
-What is Amazon ECS?
+### What is Amazon ECS?
 Amazon ECS (Elastic Container Service) is a scalable and highly available container orchestration service that enables you to run, manage, and scale Docker containers in the cloud. It provides a way to run applications in a highly available and scalable environment without the need to manage the underlying infrastructure.
-What is Amazon SNS?
+### What is Amazon SNS?
 Amazon SNS (Simple Notification Service) is a web service that enables you to send notifications from the cloud to distribute applications or people. It provides a flexible and cost-effective way to send messages to subscribers, such as mobile devices, email, and HTTP endpoints.
-What is Amazon SQS?
+###  What is Amazon SQS?
 Amazon SQS (Simple Queue Service) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications. It provides a reliable and scalable way to send, store, and receive messages between software components, without requiring any infrastructure or operations support.
-What is Amazon DynamoDB?
+### What is Amazon DynamoDB?
 Amazon DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability. It enables you to store and retrieve any amount of data, at any time, from anywhere on the web.
-What is AWS CloudFront?
+### What is AWS CloudFront?
 AWS CloudFront is a content delivery network (CDN) that distributes content, such as web pages, videos, and images, to users worldwide with low latency and high transfer speeds. It caches and delivers content from locations closest to the end user, which helps to reduce the load on your servers and improve the user experience.
-What is AWS Lambda?
+### What is AWS Lambda?
 AWS Lambda is a serverless compute service that enables you to run code without provisioning or managing servers. It automatically scales and provisions compute resources as needed, and charges you only for the compute time that you consume.
-What is AWS CloudFormation?
+### What is AWS CloudFormation?
 AWS CloudFormation is a service that enables you to provision and manage AWS resources and applications using code. It provides a way to model and automate the deployment of infrastructure and applications, and to keep track of changes over time.
-What is AWS Elastic Beanstalk?
+### What is AWS Elastic Beanstalk?
 AWS Elastic Beanstalk is a fully managed service that enables you to deploy and run web applications in the cloud. It automatically handles the deployment, scaling, and management of the underlying infrastructure, and enables you to focus on your application code.
-What is AWS Glue?
+### What is AWS Glue?
 AWS Glue is a fully managed ETL (Extract, Transform, Load) service that makes it easy to move data between data stores, and to prepare and transform data for analytics. It provides a way to automate the discovery, enrichment, and transformation of data, and to make it available for analysis in AWS services like Amazon Redshift, Amazon EMR, and Amazon Athena.
-What is Amazon EMR?
+### What is Amazon EMR?
 Amazon EMR (Elastic MapReduce) is a fully managed big data processing service that enables you to run and scale Apache Spark, Apache Hive, and Apache Hadoop clusters in the cloud. It provides a way to process and analyze large amounts of data, and to store it in a durable and scalable way in Amazon S3.
-What is AWS CloudHSM?
+### What is AWS CloudHSM?
 AWS CloudHSM (Hardware Security Module) is a service that provides dedicated hardware security modules in the cloud. It enables you to generate, store, and manage cryptographic keys in a secure and tamper-resistant environment, and to use them with AWS services and applications.
-What is Amazon Aurora?
+### What is Amazon Aurora?
 Amazon Aurora is a fully managed relational database service that combines the performance and availability of traditional commercial databases with the simplicity and cost-effectiveness of open-source databases. It provides up to five times better performance than standard MySQL databases and enables you to scale your database in a highly available and fault-tolerant way.
-What is AWS KMS?
+### What is AWS KMS?
 AWS KMS (Key Management Service) is a fully managed service that enables you to create and control the encryption keys used to encrypt your data. It provides a way to encrypt data at rest and in transit, and to manage keys centrally across your entire organization.
-What is Amazon RDS?
+### What is Amazon RDS?
 Amazon RDS (Relational Database Service) is a fully managed relational database service that makes it easy to set up, operate, and scale a relational database in the cloud. It supports popular database engines like MySQL, PostgreSQL, Oracle, and Microsoft SQL Server, and provides automatic backups, software patching, and automatic failover.
-What is AWS Direct Connect?
+### What is AWS Direct Connect?
 AWS Direct Connect is a network service that enables you to establish a dedicated network connection between your on-premises data center and AWS. It provides a more reliable and consistent network experience than a standard internet connection and can help to reduce your network costs.
-What is Amazon Elastic File System?
+### What is Amazon Elastic File System?
 Amazon Elastic File System (EFS) is a fully managed file storage service that provides scalable and highly available file storage for use with Amazon EC2 instances. It provides a way to store and access files from multiple instances simultaneously and supports NFSv4 protocol.
-What is AWS WAF?
+### What is AWS WAF?
 AWS WAF (Web Application Firewall) is a web application firewall that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources. It enables you to create custom rules that block or allow traffic to your web applications based on specific conditions.
-What is Amazon Route 53?
+### What is Amazon Route 53?
 Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service that enables you to register domain names, and route internet traffic to the appropriate resources. It provides a way to route traffic to AWS resources like EC2 instances, S3 buckets, and load balancers, as well as to resources outside of AWS.
-What is AWS IAM?
+### What is AWS IAM?
 AWS IAM (Identity and Access Management) is a web service that enables you to securely control access to AWS resources for your users. It provides a way to manage users, groups, and permissions, and to grant or deny access to specific resources based on roles or policies.
-Scenario: Your company has recently migrated its infrastructure to AWS, and you are responsible for monitoring the performance and health of the applications running in the cloud. How would you monitor the health of the applications and ensure their availability?
+### Scenario: Your company has recently migrated its infrastructure to AWS, and you are responsible for monitoring the performance and health of the applications running in the cloud. How would you monitor the health of the applications and ensure their availability?
 To monitor the health of the applications running in the cloud, I would use AWS CloudWatch. I would set up alarms to notify me when certain metrics exceed predefined thresholds, such as CPU utilization, memory usage, and network traffic. I would also use CloudWatch to monitor the logs generated by the applications, and to track their performance over time. Additionally, I would use AWS Elastic Load Balancer to distribute traffic across multiple instances and ensure high availability of the applications.
-Scenario: Your company is looking to reduce its infrastructure costs by moving some of its workloads to the cloud. However, it is concerned about the security of its data in the cloud. How would you address these concerns?
+### Scenario: Your company is looking to reduce its infrastructure costs by moving some of its workloads to the cloud. However, it is concerned about the security of its data in the cloud. How would you address these concerns?
 To address the security concerns of the company, I would recommend using AWS Security services like AWS Identity and Access Management (IAM), AWS Key Management Service (KMS), and AWS CloudTrail. IAM would help to control access to AWS resources, KMS would enable encryption of data at rest and in transit, and CloudTrail would provide a log of all API calls made to the AWS services. I would also recommend implementing network security controls like AWS Virtual Private Cloud (VPC), which provides a private network for the company's workloads in the cloud.
-Scenario: Your company is planning to migrate its database to AWS, and it has strict compliance requirements around data retention and disaster recovery. How would you ensure compliance and disaster recovery of the database in AWS?
+### Scenario: Your company is planning to migrate its database to AWS, and it has strict compliance requirements around data retention and disaster recovery. How would you ensure compliance and disaster recovery of the database in AWS?
 To ensure compliance and disaster recovery of the database in AWS, I would recommend using AWS RDS, which is a fully managed relational database service that provides automated backups, point-in-time restores, and automated failover capabilities. I would configure automated backups and enable multi-AZ deployments to ensure high availability and disaster recovery. I would also ensure that the database encryption is enabled using AWS KMS, which would ensure that the data is encrypted at rest and in transit and would help to comply with the company's security requirements.
-Scenario: Your company has recently launched a new application that has become very popular, and the traffic to the application has increased significantly. However, the application is experiencing performance issues, and the response times are slow. How would you optimize the performance of the application in AWS?
+### Scenario: Your company has recently launched a new application that has become very popular, and the traffic to the application has increased significantly. However, the application is experiencing performance issues, and the response times are slow. How would you optimize the performance of the application in AWS?
 To optimize the performance of the application in AWS, I would recommend scaling out the application horizontally by using AWS Elastic Load Balancer and auto-scaling groups. I would also use AWS CloudFront to distribute content to users from the edge locations closest to them, which would reduce latency and improve the application's response times. Additionally, I would use AWS CloudWatch to monitor the performance of the application and identify performance bottlenecks, such as CPU utilization, memory usage, and network traffic. I would optimize the application's code and database queries based on the CloudWatch metrics and logs to improve its performance.
-Scenario: Your company is planning to deploy a new application in AWS, and it has specific performance requirements around the latency and throughput of the application. How would you design the architecture of the application in AWS to meet these requirements?
+### Scenario: Your company is planning to deploy a new application in AWS, and it has specific performance requirements around the latency and throughput of the application. How would you design the architecture of the application in AWS to meet these requirements?
 To design the architecture of the application in AWS to meet the performance requirements, I would recommend using AWS services like AWS Elastic Load Balancer, AWS Auto Scaling, AWS CloudFront, and AWS Global Accelerator. I would use Elastic Load Balancer and Auto Scaling to distribute the traffic across multiple instances and scale the application horizontally as per the demand. I would also use CloudFront to deliver content to the users from the edge locations closest to them, which would reduce latency and improve the application's response times. I would use Global Accelerator to improve the application's performance by routing the traffic over the AWS global network and using the optimal AWS edge location based on the user's location.
-Scenario: Your company is planning to migrate its data warehouse to AWS, and it has a large amount of data that needs to be transferred to AWS. How would you migrate the data to AWS and ensure its integrity and security?
+### Scenario: Your company is planning to migrate its data warehouse to AWS, and it has a large amount of data that needs to be transferred to AWS. How would you migrate the data to AWS and ensure its integrity and security?
 To migrate the data warehouse to AWS and ensure its integrity and security, I would recommend using AWS Database Migration Service (DMS) and AWS Snowball. I would use DMS to migrate the data from the on-premises database to the AWS database, and I would use Snowball to transfer the large amount of data to AWS securely. I would also use AWS KMS to encrypt the data at rest and in transit, and I would use AWS IAM to control access to the AWS resources. I would ensure that the migration is done in a phased manner, with adequate testing and validation, to ensure that the data is migrated without any loss or corruption.
-Scenario: Your company is looking to optimize its costs in AWS, and it is considering using AWS Reserved Instances. How would you determine the optimal mix of reserved instances to achieve the cost optimization goals?
+### Scenario: Your company is looking to optimize its costs in AWS, and it is considering using AWS Reserved Instances. How would you determine the optimal mix of reserved instances to achieve the cost optimization goals?
 To determine the optimal mix of reserved instances to achieve the cost optimization goals, I would use the AWS Cost Explorer and AWS Trusted Advisor. I would analyse the historical usage patterns of the instances, and I would use the Cost Explorer to estimate the cost savings by using reserved instances. I would also use Trusted Advisor to identify any potential issues and to provide recommendations for optimizing costs. I would work closely with the finance team to understand the budget and to ensure that the reserved instances are purchased in a cost-effective manner.
-Scenario: Your company has a web application that is running in AWS, and it has been experiencing DDoS attacks. How would you protect the application from DDoS attacks in AWS?
+### Scenario: Your company has a web application that is running in AWS, and it has been experiencing DDoS attacks. How would you protect the application from DDoS attacks in AWS?
 To protect the application from DDoS attacks in AWS, I would use AWS Shield, AWS WAF, and AWS CloudFront. AWS Shield is a managed DDoS protection service that provides automatic protection against DDoS attacks, and AWS WAF is a web application firewall that provides protection against web-based attacks. I would also use CloudFront to distribute content to users from the edge locations closest to them, which would help to reduce the impact of DDoS attacks. Additionally, I would use AWS CloudTrail to monitor the traffic and to identify any suspicious activity, and I would use AWS GuardDuty to detect any potential threats to the application.
-Scenario: Your company is planning to use AWS Lambda to run serverless functions. What are some best practices you would follow to ensure the performance and security of the Lambda functions?
+### Scenario: Your company is planning to use AWS Lambda to run serverless functions. What are some best practices you would follow to ensure the performance and security of the Lambda functions?
 To ensure the performance and security of Lambda functions, I would follow these best practices:
 Keep the Lambda functions small and focused to improve their performance and reduce their cold start times.
 Use the latest version of the Lambda runtime and libraries to ensure that the functions are secure and optimized for performance.
@@ -321,7 +329,7 @@ Use environment variables to store sensitive information like API keys and datab
 Use AWS CloudTrail to monitor the function's execution and to identify any suspicious activity.
 Use AWS X-Ray to trace the function's execution and to identify any performance bottlenecks or issues.
 Use AWS IAM to control access to the Lambda function and to limit the permissions based on the principle of least privilege.
-Scenario: Your company is planning to use AWS S3 to store its data. How would you ensure the security and accessibility of the data in S3?
+### Scenario: Your company is planning to use AWS S3 to store its data. How would you ensure the security and accessibility of the data in S3?
 To ensure the security and accessibility of the data in S3, I would follow these best practices:
 Use AWS KMS to encrypt the data at rest and in transit, and use S3 bucket policies to control access to the data.
 Use versioning to ensure that previous versions of the objects are available in case of accidental deletion or modification.
@@ -329,7 +337,7 @@ Use S3 Lifecycle policies to automatically move the objects to lower-cost storag
 Use AWS CloudTrail to monitor the access to the S3 buckets and to identify any unauthorized access or changes.
 Use S3 Cross-Region Replication to replicate the data to a different region for disaster recovery purposes.
 Use S3 Transfer Acceleration to improve the speed of data transfer to and from the S3 buckets.
-Scenario: Your company is planning to use AWS RDS to run its database. What are some best practices you would follow to ensure the availability and scalability of the database?
+### Scenario: Your company is planning to use AWS RDS to run its database. What are some best practices you would follow to ensure the availability and scalability of the database?
 To ensure the availability and scalability of the database in RDS, I would follow these best practices:
 Use Multi-AZ deployments to ensure that the database is highly available and can withstand any failures in the underlying infrastructure.
 Use Read Replicas to scale the database horizontally and to offload the read traffic from the primary database instance.
@@ -350,16 +358,17 @@ Here is a step-by-step guide to upgrading your Amazon Elastic Kubernetes Service
 Check for Available UpdatesFirst, check for available updates to your EKS cluster by running the following command in the AWS CLI:
 
 
+```
 aws eks update-cluster-version --name <cluster-name> --kubernetes-version <version>
-
+```
 
 Replace `<cluster-name>` with the name of your EKS cluster and `<version>` with the desired Kubernetes version.
 
 Upgrade Control PlaneTo upgrade the control plane of your EKS cluster, run the following command in the AWS CLI:
 
-
+```
 aws eks update-cluster-version --name <cluster-name> --kubernetes-version <version> --endpoint-url <endpoint-url>
-
+```
 
 Replace `<cluster-name>` with the name of your EKS cluster, `<version>` with the desired Kubernetes version, and `<endpoint-url>` with the endpoint URL of your control plane.
 
@@ -373,17 +382,17 @@ Drain the nodes in the node group to gracefully terminate any running pods.
 
 Update the node group by running the following command in the AWS CLI:
 
-
+```
 aws eks update-nodegroup-version --cluster-name <cluster-name> --nodegroup-name <nodegroup-name> --launch-template <launch-template-id> --release-version <release-version>
-
+```
 
 Replace `<cluster-name>` with the name of your EKS cluster, `<nodegroup-name>` with the name of your node group, `<launch-template-id>` with the ID of the new launch template, and `<release-version>` with the desired Kubernetes version.
 
 Verify UpgradeFinally, verify that your EKS cluster has been successfully upgraded by checking the Kubernetes version using the following command:
 
-
+```
 kubectl version
-
+```
 
 With these steps, you should now have a fully upgraded EKS cluster running the desired Kubernetes version.
 
