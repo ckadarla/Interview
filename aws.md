@@ -68,10 +68,10 @@ Application migration strategies refer to the methods used to move applications 
 5. **Monitor**: Implement observability early for performance and cost metrics.
 6. **Optimize**: Post-migration cost and performance tuning (right-size VMs, auto-scaling, caching).
 
+
+
+
 ---
-
-
-
 
 ### The choice of migration approach depends on factors such as the specific goals of the migration, budget, timeline, and the nature of the workloads. Often, organizations will use a combination of these approaches for different applications and services within their migration strategy. It's crucial to plan carefully, assess the current environment thoroughly, and consider the long-term objectives of the organization when choosing a migration path.What’s EKS?
 
