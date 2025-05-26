@@ -31,6 +31,48 @@ Migrating from on-premises (on-prem) environments to the cloud is a common strat
    - In a hybrid cloud approach, organizations maintain some workloads on-premises while migrating others to the cloud.
    - Hybrid cloud setups allow for gradual migration and can be used when some data or services must remain on-premises due to regulatory or operational constraints.
 
+Application migration strategies refer to the methods used to move applications from one environment (typically on-premises) to another (often cloud platforms like AWS, Azure, or GCP). These are also called the **6 R’s of Migration**, and in some cases, extended to 7 or 8 R’s depending on context.
+
+### ✅ **The 7 R's Migration Strategies**
+
+| Strategy                                             | Description                                                           | When to Use                                                     |
+| ---------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------- |
+| **1. Rehost** (Lift-and-Shift)                       | Move application without code changes. Uses IaaS (VMs).               | Tight migration timeline; minimal cloud skills; legacy systems. |
+| **2. Replatform** (Lift-Tinker-and-Shift)            | Minor optimizations (e.g., move to managed DB).                       | Want some cloud benefits but not rewriting code.                |
+| **3. Repurchase**                                    | Replace with SaaS (e.g., move CRM to Salesforce).                     | Legacy or unsupported app; existing SaaS meets requirements.    |
+| **4. Refactor / Re-architect**                       | Redesign application for cloud-native benefits (e.g., microservices). | Modernization goal; scalability or agility needed.              |
+| **5. Retire**                                        | Decommission redundant apps.                                          | Low usage apps; overlapping functionality with other systems.   |
+| **6. Retain** (Revisit)                              | Keep app as-is temporarily or indefinitely.                           | Compliance, latency, or pending dependency migrations.          |
+| **7. Relocate** (specific to VMware/GCP/Azure stack) | Move entire application stack without changing hypervisor or infra.   | Useful for quick large-scale migration using VMware Cloud, etc. |
+
+---
+
+### 📦 **Example Strategy by Scenario**
+
+| Application Type              | Recommended Strategy  | Reason                                                         |
+| ----------------------------- | --------------------- | -------------------------------------------------------------- |
+| Monolithic legacy app         | Rehost → Replatform   | Get to cloud fast, optimize later                              |
+| On-premise DB                 | Replatform / Refactor | Move to managed DB, or adopt serverless DB (Aurora, Cosmos DB) |
+| In-house CRM                  | Repurchase            | SaaS like Salesforce reduces management burden                 |
+| Loosely coupled microservices | Refactor              | Take advantage of cloud-native features                        |
+| Internal old reporting tool   | Retire / Retain       | Identify usage and decide accordingly                          |
+
+---
+
+### 🧠 **Best Practices for Migration Strategy**
+
+1. **Assess**: Use tools like Azure Migrate, AWS Migration Evaluator, or GCP StratoZone to assess workloads.
+2. **Prioritize**: Based on business value, complexity, and technical feasibility.
+3. **Pilot**: Choose a low-risk application for initial migration to build experience.
+4. **Automate**: Use IaC (Terraform, ARM, etc.) to replicate infra setup.
+5. **Monitor**: Implement observability early for performance and cost metrics.
+6. **Optimize**: Post-migration cost and performance tuning (right-size VMs, auto-scaling, caching).
+
+---
+
+
+
+
 ### The choice of migration approach depends on factors such as the specific goals of the migration, budget, timeline, and the nature of the workloads. Often, organizations will use a combination of these approaches for different applications and services within their migration strategy. It's crucial to plan carefully, assess the current environment thoroughly, and consider the long-term objectives of the organization when choosing a migration path.What’s EKS?
 
 I don’t want to spend too much time here. As I explained previously, EKS is the offering from AWS to have a Kubernetes managed cluster. AWS takes care of the master control plane, and you take care of the worker nodes. Nothing new here in comparison to the main AWS competitors, Azure and Google Cloud. However, in AWS, users have to pay $0.10 per hour for every master control plane, or around $75 per month. And of course, you continue paying the normal rate for all the resources you create like load balancers, storage, or EC2 instances.
