@@ -4,19 +4,22 @@ Here are **50 interview questions and detailed answers** based on your updated c
 
 ### 🧠 **Cloud Platform (GCP, AWS, Azure)**
 
-1. **Q:** How do you choose between GCP, AWS, and Azure for a project?
+1. **Q:** How do you choose between GCP, AWS, and Azure for a project? 
    **A:** Based on project requirements, compliance, cost, and existing infrastructure. GCP is often preferred for analytics and Kubernetes-native apps (GKE), AWS for mature ecosystem and services like Lambda or Batch, and Azure for enterprise integration (AAD, Microsoft tools).
 
-2. **Q:** Explain your experience with GCP IAM.
+2. **Q:** Explain your experience with GCP IAM. 
    **A:** Managed roles, policies, and service accounts. Used custom roles for least-privilege access and workload identity federation for secure on-prem/cloud integration.
 
 3. **Q:** What are some cost optimization strategies you've implemented in GCP?
+
    **A:** Used committed use discounts, rightsizing recommendations, budget alerts, and GCP’s Recommender API. Also shut down non-prod workloads outside business hours via automation.
 
 4. **Q:** How do you provision infrastructure across GCP, AWS, and Azure using IaC?
+ 
    **A:** Used Terraform with environment-specific modules. For Azure, used Bicep occasionally. Applied DRY principles and Terragrunt for centralized configuration.
 
 5. **Q:** What services in GCP have you used for CI/CD?
+ 
    **A:** Google Cloud Build, Artifact Registry, GKE Autopilot integration, and integrated it with GitHub and GitLab for trigger-based workflows.
 
 ---
