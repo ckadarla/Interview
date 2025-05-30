@@ -1,4 +1,3 @@
-```markdown
 # 🧰 Terraform Commands – Explained with Usage and Examples
 
 This markdown provides a concise overview of **commonly used Terraform CLI commands**, their purpose, and real-world examples – ideal for interviews and practical use.
