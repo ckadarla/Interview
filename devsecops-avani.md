@@ -1,6 +1,9 @@
 Q: How do you integrate security into a CI/CD pipeline?
+
 A: By embedding SAST, DAST, dependency scanning, and container image scanning tools like SonarQube, OWASP ZAP, Trivy, or Aqua into the pipeline stages (build, test, deploy).
+
 Q: What tools have you used for static code analysis?
+
 A: Tools like SonarQube, Checkmarx, and Fortify to detect code-level vulnerabilities early in development.
 Q: What is the benefit of shifting security left?
 A: It reduces cost and effort by identifying security flaws early in the SDLC, improving code quality and reducing risk.
