@@ -247,47 +247,82 @@ A: Embed security tasks in backlog, track security debt, run security sprints, a
 Q: What’s your approach to onboarding new developers to secure coding?
 A: Provide secure code guidelines, run onboarding workshops, give hands-on labs, and integrate real-time feedback in IDE or PRs.
 Q: What’s your incident playbook template?
+
 A: Incident title, detection method, affected systems, severity, impact, timeline, actions taken, lessons learned, and prevention steps.
+
 Q: How do you unify DevSecOps across GCP, AWS, and Azure?
+
 A: Use policy-as-code tools like OPA or Bridgecrew, centralize monitoring, and abstract IaC with Terraform modules or Pulumi.
+
 Q: What are cloud-agnostic security patterns?
+
 A: Encryption in transit/rest, identity federation, role-based access control, secure boot, and centralized logging.
+
 Q: What’s the difference between cloud-native and cloud-agnostic security?
+
 A: Cloud-native uses platform-specific tools/features, cloud-agnostic uses generalized, portable security tools and policies.
+
 Q: How do you manage identity across multiple clouds?
+
 A: Use a central IdP with SSO/OIDC, integrate with each cloud’s IAM, and enforce MFA and conditional access policies.
+
 Q: How do you ensure consistent tagging and classification of resources?
+
 A: Enforce tagging policies in IaC, validate in CI/CD, and use scripts/tools to report/tag retroactively.
+
 Q: What is Zero Trust Architecture and how does DevSecOps support it?
+
 A: It assumes no trust by default. DevSecOps enforces this by integrating identity verification, continuous monitoring, and least privilege in pipelines and infra.
+
 Q: How do you use chaos engineering to improve security?
+
 A: Simulate attacks or misconfigurations (e.g., revoked secrets, broken auth) to improve system resilience and detection capabilities.
+
 Q: How do you integrate SBOMs into your pipeline?
+
 A: Generate SBOMs using Syft or CycloneDX and store with artifacts. Use them for dependency scanning and vulnerability analysis.
+
 Q: How does DevSecOps help in achieving faster recovery in DR scenarios?
+
 A: Automates infra provisioning, config validation, and secrets rotation, enabling faster, consistent recovery workflows.
+
 Q: How do you stay updated with regulatory requirements like SOC2, HIPAA, or PCI-DSS?
+
 A: Subscribe to updates, participate in audits, align controls with frameworks like NIST/ISO, and use compliance-as-code tools.
+
 Q: What is DevSecOps and how does it integrate into CI/CD pipelines?
+
     A: DevSecOps integrates security into every stage of the CI/CD pipeline by embedding security tools (like SAST, DAST, dependency scanning) into the software development lifecycle, enabling early vulnerability detection and faster remediation.
+    
 Q: How would you integrate SAST into a CI/CD pipeline?
+
     A: Use tools like SonarQube, Checkmarx, or Fortify in the build phase to analyze source code for vulnerabilities and fail the build on policy violations.
+    
 Q: What tools can be used for DAST in pipelines?
+
     A: OWASP ZAP, Burp Suite, and AppSpider are common DAST tools used during functional testing or staging to scan running applications.
+    
 Q: How do you implement container scanning in CI/CD?  
    A: Tools like Trivy, Clair, or Aqua Security scan container images during the build phase before pushing to registries.
+   
 Q: What is shift-left security?  
    A: It means integrating security practices early in the development cycle to catch issues before they reach production.
+   
 Q: How would you secure an S3 bucket in AWS?  
    A: Enable encryption (SSE), block public access, use IAM policies for least privilege, and enable logging.
+   
 Q: How do you secure traffic in Azure VNets?  
    A: Use NSGs, Azure Firewall, route tables, and private endpoints. Enable DDoS protection and logging.
+   
 Q: What are best practices for GCP IAM?  
    A: Use least privilege, predefined roles, organization policies, and avoid using primitive roles like `Editor`.
+   
 Q: How do you manage encryption in cloud environments?   
    A: Use KMS (AWS KMS, Azure Key Vault, GCP KMS) to manage encryption keys, ensure data-at-rest and in-transit encryption.
+   
 Q: How would you isolate workloads in the cloud?  
     A: Use separate VPCs, subnets, service accounts, and firewall rules; adopt microsegmentation for better isolation.
+    
 Q: What is IaaC and how does it help with security?  
     A: IaaC automates resource provisioning with version-controlled code, ensuring repeatability, compliance, and secure configurations.
 Q: How do you secure Terraform code?  
