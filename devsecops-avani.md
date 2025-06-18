@@ -1,8 +1,8 @@
-**Q: How do you integrate security into a CI/CD pipeline?
+Q: How do you integrate security into a CI/CD pipeline?
  
  A: By embedding SAST, DAST, dependency scanning, and container image scanning tools like SonarQube, OWASP ZAP, Trivy, or Aqua into the pipeline stages (build, test, deploy).
 
-**Q: What tools have you used for static code analysis?
+Q: What tools have you used for static code analysis?
  
   A: Tools like SonarQube, Checkmarx, and Fortify to detect code-level vulnerabilities early in development.
 
