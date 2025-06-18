@@ -5,74 +5,140 @@ A: By embedding SAST, DAST, dependency scanning, and container image scanning to
 Q: What tools have you used for static code analysis?
 
 A: Tools like SonarQube, Checkmarx, and Fortify to detect code-level vulnerabilities early in development.
+
 Q: What is the benefit of shifting security left?
+
 A: It reduces cost and effort by identifying security flaws early in the SDLC, improving code quality and reducing risk.
+
 Q: How do you automate secrets scanning in code?
+
 A: Use tools like GitGuardian, Gitleaks, or TruffleHog integrated into commit hooks or pipelines to catch secrets in code.
+
 Q: How would you secure third-party dependencies in the pipeline?
+
 A: Use tools like OWASP Dependency-Check, Snyk, or JFrog Xray to identify known vulnerabilities (CVEs) in dependencies.
+
 Q: How do you secure a GCP project?
+
 A: Use IAM best practices, service perimeter with VPC-SC, organization policies, firewall rules, and centralized logging/monitoring with SCC.
+
 Q: What is VPC-SC in GCP and its security role?
+
 A: VPC Service Controls help isolate GCP resources and mitigate data exfiltration risks by defining service perimeters.
+
 Q: How would you secure cloud storage buckets in GCP?
+
 A: Use bucket-level IAM, uniform bucket-level access, enforce encryption (CMEK), and disable public access.
+
 Q: What’s your approach to securing cloud networking?
+
 A: Implement firewall rules (least privilege), restrict ingress/egress, use private service access, and configure subnets and routes securely.
+
 Q: How do you enforce encryption in cloud resources?
+
 A: Enable encryption at rest with CMEK or CSEK, use HTTPS/TLS for in-transit encryption, and ensure default encryption is turned on.
 Q: How do you implement security in Terraform?
+
 A: Use Sentinel or Open Policy Agent for policy as code, version modules, perform drift detection, and validate plans with terraform validate and tfsec.
+
 Q: What tools do you use to scan IaC for security issues?
+
 A: tfsec, Checkov, Terrascan, or Snyk IaC to detect misconfigurations and enforce secure defaults.
+
 Q: How do you manage credentials in IaC workflows?
+
 A: Avoid hardcoding secrets, use secure backends like Vault or cloud KMS, and manage state files securely (e.g., encryption + RBAC).
+
 Q: How do you handle Terraform state securely?
+
 A: Store in a secure backend (e.g., GCS bucket with CMEK + versioning + access control), and encrypt with KMS.
+
 Q: How do you enforce compliance with IaC?
+
 A: Use OPA or Sentinel policies in CI/CD to block non-compliant infrastructure changes before deployment.
+
 Q: How do you differentiate SAST and DAST?
-A: SAST analyzes source code without running it (early in SDLC), while DAST tests a running application (post-deployment).
+
+A: SAST analyzes source code without running it (early in SDLC), while DAST tests a running application (post-deployment)
+.
 Q: What tools have you used for container image scanning?
+
 A: Trivy, Clair, Anchore, and Aqua Security to identify vulnerabilities in base images and packages.
 Q: How do you secure Kubernetes workloads?
+
 A: Implement PodSecurityPolicies/OPA/Gatekeeper, RBAC, network policies, secrets encryption, and scan manifests using Kubeaudit.
+
 Q: How do you test APIs for security vulnerabilities?
+
 A: Use tools like OWASP ZAP, Postman with security tests, or Burp Suite to test for issues like injection, auth flaws, and rate-limiting.
+
 Q: How do you continuously monitor code for new vulnerabilities?
+
 A: Use dependency scanning tools (e.g., Snyk, Dependabot), automated CVE feeds, and integrate alerts into developer tools like Slack or Jira.
+
 Q: How do you implement compliance checks in the cloud?
+
 A: Use tools like Forseti (GCP), AWS Config, Azure Policy, or custom scripts to check resources against security/compliance baselines.
+
 Q: How do you ensure GDPR compliance in cloud applications?
+
 A: Implement data encryption, user consent handling, data minimization, audit trails, and allow for data export/deletion.
+
 Q: What is CIS Benchmark and how do you use it?
+
 A: CIS Benchmark provides security best practices; tools like InSpec or Prisma Cloud can validate infrastructure against CIS benchmarks.
+
 Q: How do you track compliance drift in cloud environments?
-A: Use configuration management tools (Ansible, Terraform), cloud-native config tracking, and audit logs to detect unauthorized changes.
+
+A: Use configuration management tools (Ansible, Terraform), cloud-native config tracking, and audit logs to detect unauthorized changes
+
 Q: How do you manage audits across multi-cloud environments?
+
 A: Use centralized logging, tagging standards, automation with policy-as-code, and cross-cloud compliance tools like Prisma or Dome9.
+
 Q: How do you detect threats in cloud environments?
+
 A: Use tools like GCP Security Command Center, Cloud Audit Logs, IDS/IPS, and set up real-time alerts with Pub/Sub or SIEM integration.
+
 Q: How do you respond to a compromised cloud resource?
+
 A: Isolate the resource, rotate credentials, analyze logs for scope, remediate vulnerabilities, and perform RCA and post-incident reviews.
+
 Q: What is your incident response process?
+
 A: Detection → Triage → Containment → Eradication → Recovery → Lessons Learned → Documentation.
+
 Q: What tools support threat detection in GCP?
+
 A: SCC, Cloud Armor (WAF), Cloud IDS, Chronicle SIEM, and VPC Flow Logs.
+
 Q: How do you detect data exfiltration attempts?
+
 A: Monitor unusual network egress using VPC Flow Logs, audit logs, DLP alerts, and behavior analytics tools.
+
 ________________________________________
 Q: How do you handle zero-day vulnerabilities?
+
 A: Identify impact, apply temporary mitigations, prioritize patching, and isolate affected systems while monitoring for exploitation.
+
 Q: How do you manage vulnerability remediation in cloud?
+
 A: Automate vulnerability scans, integrate findings into ticketing systems, assign SLAs, and verify remediation post-patch.
+
 Q: How do you patch container images?
+
 A: Rebuild images from updated base images, run scans before deployment, and use CI/CD automation to redeploy patched containers.
+
 Q: How do you manage vulnerabilities in ephemeral infrastructure?
+
 A: Bake updated AMIs/images regularly, rotate instances, and enforce immutable infrastructure practices.
+
 Q: What is your process for vulnerability triage?
-A: Assess CVSS score, exploitability, asset criticality, and prioritize based on business risk and compliance requirements.
+
+A: Assess CVSS score, exploitability, asset criticality, and prioritize based on business risk and compliance requirements
+
 Q: How do you enforce least privilege access in GCP?
+
 A: Use predefined roles, audit IAM bindings, apply constraints via org policies, and use service accounts with scoped permissions.
 Q: What tools do you use for managing secrets?
 A: HashiCorp Vault, GCP Secret Manager, AWS Secrets Manager, or sealed-secrets in Kubernetes.
