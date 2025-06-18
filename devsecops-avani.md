@@ -1,34 +1,26 @@
 Q: How do you integrate security into a CI/CD pipeline?
-
 A: By embedding SAST, DAST, dependency scanning, and container image scanning tools like SonarQube, OWASP ZAP, Trivy, or Aqua into the pipeline stages (build, test, deploy).
 
 Q: What tools have you used for static code analysis?
-
-A: Tools like SonarQube, Checkmarx, and Fortify to detect code-level vulnerabilities early in development.
+  A: Tools like SonarQube, Checkmarx, and Fortify to detect code-level vulnerabilities early in development.
 
 Q: What is the benefit of shifting security left?
-
-A: It reduces cost and effort by identifying security flaws early in the SDLC, improving code quality and reducing risk.
+  A: It reduces cost and effort by identifying security flaws early in the SDLC, improving code quality and reducing risk.
 
 Q: How do you automate secrets scanning in code?
-
-A: Use tools like GitGuardian, Gitleaks, or TruffleHog integrated into commit hooks or pipelines to catch secrets in code.
+   A: Use tools like GitGuardian, Gitleaks, or TruffleHog integrated into commit hooks or pipelines to catch secrets in code.
 
 Q: How would you secure third-party dependencies in the pipeline?
-
-A: Use tools like OWASP Dependency-Check, Snyk, or JFrog Xray to identify known vulnerabilities (CVEs) in dependencies.
+   A: Use tools like OWASP Dependency-Check, Snyk, or JFrog Xray to identify known vulnerabilities (CVEs) in dependencies.
 
 Q: How do you secure a GCP project?
-
-A: Use IAM best practices, service perimeter with VPC-SC, organization policies, firewall rules, and centralized logging/monitoring with SCC.
+   A: Use IAM best practices, service perimeter with VPC-SC, organization policies, firewall rules, and centralized logging/monitoring with SCC.
 
 Q: What is VPC-SC in GCP and its security role?
-
-A: VPC Service Controls help isolate GCP resources and mitigate data exfiltration risks by defining service perimeters.
+   A: VPC Service Controls help isolate GCP resources and mitigate data exfiltration risks by defining service perimeters.
 
 Q: How would you secure cloud storage buckets in GCP?
-
-A: Use bucket-level IAM, uniform bucket-level access, enforce encryption (CMEK), and disable public access.
+  A: Use bucket-level IAM, uniform bucket-level access, enforce encryption (CMEK), and disable public access.
 
 Q: What’s your approach to securing cloud networking?
 
@@ -140,112 +132,166 @@ A: Assess CVSS score, exploitability, asset criticality, and prioritize based on
 Q: How do you enforce least privilege access in GCP?
 
 A: Use predefined roles, audit IAM bindings, apply constraints via org policies, and use service accounts with scoped permissions.
+
 Q: What tools do you use for managing secrets?
 A: HashiCorp Vault, GCP Secret Manager, AWS Secrets Manager, or sealed-secrets in Kubernetes.
+
 Q: How do you secure API keys in a DevOps pipeline?
 A: Store them in a secure vault or secret manager, access them at runtime via environment variables or secret injection.
+
 Q: What is the principle of "Just-in-time" access and how do you implement it?
 A: Temporary elevated access granted only when needed, implemented using tools like BeyondCorp or access approval workflows.
+
 Q: How do you detect privilege escalations in cloud environments?
 A: Monitor IAM logs, alert on new roles/permissions assigned, and use anomaly detection in audit logs.
+
 Q: How do you promote security culture in DevOps teams?
 A: Conduct regular training, include security KPIs, create security champions, and automate secure practices into workflows.
+
 Q: How do you ensure security is treated as a shared responsibility?
 A: Embed security in planning, involve security in sprint reviews, and democratize security tools and training.
+
 Q: What KPIs do you track for DevSecOps success?
 A: Vulnerability MTTR, compliance score, false positive rate, coverage of security tests, and number of critical issues prevented.
+
 Q: How do you evaluate and adopt new security tools?
 A: Use PoCs, assess compatibility, performance, ease of use, community support, and security features before full adoption.
+
 Q: How do you stay up to date with cloud security threats?
 A: Follow threat intelligence feeds, vendor advisories, security blogs, attend webinars, and participate in forums like OWASP.
+
 Q: A developer pushed secrets to Git. How do you respond?
 A: Revoke and rotate the secret, remove it from Git history (git filter-branch or BFG), alert the team, and scan repo for more issues.
+
 Q: You found a critical CVE in a production service. What’s next?
 A: Assess exploitability, isolate if needed, apply patch or mitigation, test and redeploy, monitor, and document incident.
+
 Q: How do you secure a Kubernetes cluster in GCP?
 A: Use private GKE cluster, shielded nodes, workload identity, RBAC, network policies, binary authorization, and audit logging.
+
 Q: How do you handle compliance for a multi-region cloud deployment?
 A: Tag and group resources by region, apply region-specific compliance policies, and use centralized tools for enforcement and auditing.
+
 Q: How do you deal with resistance from developers towards security practices?
 A: Educate on risks, show value through metrics, simplify tooling, involve them early, and make secure paths the default and easiest option.
+
 Q: What is software supply chain security, and how do you enforce it?
 A: It involves securing all components from code to deploy (including dependencies, CI/CD tools, artifacts). Use SBOM (Software Bill of Materials), sign artifacts, and verify provenance (e.g., with Sigstore, Cosign, or in-toto).
+
 Q: What are signed builds and why are they important?
 A: Signed builds ensure the integrity and authenticity of artifacts. Tools like Cosign can sign container images; GitHub Actions can use OIDC to sign workflows.
+
 Q: How do you enforce security gates in CI/CD?
 A: Define blocking stages in the pipeline using tools like Snyk, Checkov, or SonarQube that must pass before allowing promotion to staging or production.
+
 Q: How do you manage secrets across environments (dev/test/prod)?
 A: Use separate secret stores per environment with IAM-based access control. Use key rotation and environment-specific encryption keys.
+
 Q: What’s your approach to detecting and preventing lateral movement in pipelines?
 A: Restrict permissions, isolate runners, monitor lateral access attempts, and use network segmentation and Just-in-Time credentials.
+
 Q: How does GCP Cloud Armor help with security?
 A: It's a WAF that protects against DDoS, OWASP Top 10, and supports geo-blocking and rate limiting.
+
 Q: What is the difference between GCP IAM and Organization Policies?
 A: IAM manages permissions at resource level, Org Policies enforce constraints like disabling service usage or blocking public IPs at org/folder level.
+
 Q: How do you protect against SSRF in a cloud environment?
 A: Disable metadata endpoint access (where possible), use workload identity instead of metadata tokens, validate and whitelist URLs in app logic.
+
 Q: In GCP, how would you detect and alert on anomalous behavior?
 A: Use SCC, log-based metrics, Cloud Logging, and integrate alerts into Pub/Sub, PagerDuty, or SIEM.
+
 Q: What is the difference between customer-managed and Google-managed encryption keys?
 A: CMEK gives customers full control over encryption keys, while Google-managed keys are automatic but not directly managed by the customer.
+
 Q: How do you prevent privilege escalation in Terraform-managed IAM roles?
 A: Define strict IAM role boundaries, review policies for wildcard permissions, use OPA to block risky patterns.
+
 Q: What are Sentinel and OPA? How do they compare?
 A: Both enforce policy-as-code. Sentinel is Terraform-native (by HashiCorp); OPA is broader and supports many platforms including Kubernetes.
+
 Q: How do you ensure only approved modules are used in Terraform?
 A: Use a private Terraform registry, scan module sources, and enforce checks in CI/CD.
+
 Q: How do you manage Terraform in a team securely?
 A: Use remote backends (e.g., Terraform Cloud or GCS) with access controls, locking, and versioned state files.
+
 Q: How do you detect and fix drift in IaC?
 A: Use terraform plan in CI pipelines, use tools like DriftCTL or Terraform Cloud drift detection.
+
 Q: What is PodSecurityAdmission and how does it replace PodSecurityPolicy?
 A: PodSecurityAdmission is a built-in admission controller in Kubernetes v1.23+ that enforces pod security standards (restricted, baseline, privileged).
+
 Q: How do you enforce runtime security in Kubernetes?
 A: Use tools like Falco or Aqua Enforce to monitor syscalls and alert/block unauthorized behavior.
+
 Q: How do you ensure image provenance in Kubernetes?
 A: Use admission controllers like Kyverno or Gatekeeper to enforce signed images only.
+
 Q: What are Kubernetes NetworkPolicies and how do they secure workloads?
 A: They control ingress/egress between pods/namespaces. By default, all traffic is allowed; policies can isolate services.
+
 Q: How do you implement RBAC securely in Kubernetes?
 A: Follow least privilege, avoid binding cluster-admin, audit rolebindings, and review logs for excessive permissions.
+
 Q: What do you audit in a DevSecOps pipeline?
 A: Code commits, pipeline runs, approval logs, artifact changes, and secrets access events.
+
 Q: How do you monitor failed login attempts in GCP?
 A: Use Cloud Audit Logs → export to Cloud Logging → create alert policies with filters on authenticationInfo.
+
 Q: What’s the role of SIEM in DevSecOps?
 A: Collect, correlate, and analyze logs from CI/CD, cloud infrastructure, and applications to detect anomalies and threats.
+
 Q: How do you reduce alert fatigue in security monitoring?
 A: Use threshold-based alerts, prioritize based on severity, use deduplication, and route alerts to appropriate teams.
+
 Q: How do you detect privilege escalation via logs?
 A: Look for patterns like self-assigned IAM roles, service account impersonation, or use of admin-level APIs.
+
 Q: A container in production is running with root privileges. What do you do?
 A: Isolate it, analyze behavior/logs, update image to run as non-root, enforce PSP or OPA to prevent recurrence.
+
 Q: Your team uses an outdated OS image. How do you handle it?
 A: Tag it as deprecated, communicate risks, provide an updated secure image, enforce it via CI validation or admission control.
+
 Q: Your Vault cluster is down. How does your system respond?
 A: Applications using Vault should have TTL-based secrets and retry logic. Consider HA Vault setup with integrated storage or cloud backends.
+
 Q: A developer requests access to production secrets. What’s your response?
 A: Use break-glass access with approvals, log all access, and revoke immediately after task completion.
+
 Q: Your CI runners are compromised. What’s your action plan?
 A: Revoke secrets, rotate credentials, rebuild runners, analyze audit logs, enforce isolation of runners per project.
+
 Q: How do you track DevSecOps maturity?
 A: Use a maturity model (e.g., NIST, OWASP SAMM), score each domain (CI/CD, infra, monitoring), and drive initiatives based on gaps.
+
 Q: What security SLAs do you define?
 A: MTTR for vulnerabilities, patch timelines (e.g., critical in 24h), compliance coverage, and secrets rotation frequency.
+
 Q: What’s the “secure defaults” principle?
 A: Ensure new systems/applications are deployed with least-privilege, encrypted, locked-down configurations without requiring user tuning.
+
 Q: How do you handle legacy systems with no CI/CD?
 A: Isolate, monitor strictly, document risks, create CI/CD wrapper (if possible), and define a migration plan.
+
 Q: What would you automate first in a new DevSecOps project?
 A: Dependency scanning, secrets detection, and IaC misconfig detection — as they give immediate, high-value coverage.
+
 Q: How do you work with dev teams that push insecure code?
 A: Set up feedback loops (e.g., PR comments via security scans), educate on patterns, and ensure security is integrated into sprint goals.
+
 Q: How do you convince leadership to invest in DevSecOps?
 A: Use ROI metrics like reduced incident response time, compliance readiness, and show the cost of breaches.
+
 Q: How do you align DevSecOps with agile practices?
 A: Embed security tasks in backlog, track security debt, run security sprints, and include security in DoD (Definition of Done).
+
 Q: What’s your approach to onboarding new developers to secure coding?
 A: Provide secure code guidelines, run onboarding workshops, give hands-on labs, and integrate real-time feedback in IDE or PRs.
+
 Q: What’s your incident playbook template?
 
 A: Incident title, detection method, affected systems, severity, impact, timeline, actions taken, lessons learned, and prevention steps.
