@@ -118,16 +118,10 @@ pr:
 **A:** A Helm chart is a package with templated Kubernetes YAML files. It has folders like `templates/`, `values.yaml`, and `Chart.yaml`.
 
 **Q17. How do you override Helm chart values during install?**  
-```
-```bash
 helm install myapp ./mychart -f custom-values.yaml
-```
-``` 
 **Q18. How do you roll back a Helm release?**  
-```bash
 helm rollback <release-name> <revision>
-```
-```markdown
+
 **Q19. What is a ConfigMap and when do you use it?**  
 **A:** A ConfigMap stores non-sensitive configuration as key-value pairs. Use it for app settings, env variables, etc.
 
