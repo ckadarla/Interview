@@ -1,4 +1,3 @@
-```markdown
 Design and implement CI/CD pipelines using Azure DevOps (YAML pipelines preferred) for microservices-based applications.
 
 Deploy, manage, and monitor applications in AKS (Azure Kubernetes Service).
@@ -20,13 +19,13 @@ Ensure security best practices across build, release, and runtime environments.
 Troubleshoot and resolve deployment and environment issues quickly and effectively.
 
 
-```
+
 
 # 🚀 Azure DevOps + AKS Engineer – Interview Q&A
 
 A curated list of **50 technical interview questions and answers** specifically crafted for roles involving Azure DevOps, AKS, Infrastructure as Code (ARM/Bicep/Terraform), monitoring, security, and Kubernetes-based deployments.
 
----
+
 
 ## 📂 Table of Contents
 
@@ -38,7 +37,6 @@ A curated list of **50 technical interview questions and answers** specifically 
 6. [Security & Secrets Management](#security--secrets-management)
 7. [Troubleshooting & Best Practices](#troubleshooting--best-practices)
 
-```markdown
 ## CI/CD with Azure DevOps
 
 **Q1. What are the key benefits of using YAML pipelines over Classic in Azure DevOps?**  
@@ -65,7 +63,6 @@ pr:
   name: SetVar
   script: echo "##vso[task.setvariable variable=myVar;isOutput=true]Hello"
 ```
-```markdown
 **Q4. How do you secure secrets in Azure DevOps pipelines?**  
 **A:** Use variable groups linked to Azure Key Vault, mark secrets as sensitive, and avoid echoing them.
 
@@ -119,6 +116,7 @@ pr:
 
 **Q17. How do you override Helm chart values during install?**  
 helm install myapp ./mychart -f custom-values.yaml
+
 **Q18. How do you roll back a Helm release?**  
 helm rollback <release-name> <revision>
 
@@ -227,11 +225,11 @@ helm rollback <release-name> <revision>
 **A:** Handles HTTP/HTTPS traffic routing. Common ones: NGINX, Application Gateway Ingress Controller (AGIC), Traefik.
 
 **Q47. How do you apply a patch to a live K8s deployment?**  
-```
-```bash
+
+
 kubectl patch deployment my-deploy -p '{"spec":{"replicas":4}}'
-```
-```
+
+
 **Q48. What is KEDA and how is it used in AKS?**  
 **A:** Kubernetes-based Event Driven Autoscaler. Scales workloads based on external triggers like queues.
 
