@@ -1,4 +1,4 @@
-## 1. What is DevOps?**
+## 1. What is DevOps?
 
 ### DevOps is a set of practices that combines software development (Dev) and IT operations (Ops). 
 ### It aims to shorten the system development life cycle and provide continuous delivery with high software quality.
@@ -15,28 +15,20 @@
 
 
 ## 3. Traditional SDLC vs DevOps:
-Traditional SDLC (Software Development Life Cycle) follows a linear and sequential approach known as the Waterfall model.
+### Traditional SDLC (Software Development Life Cycle) follows a linear and sequential approach known as the Waterfall model.
+### DevOps encourages an iterative and incremental approach, allowing for quicker adaptations and more frequent releases.
 
-DevOps encourages an iterative and incremental approach, allowing for quicker adaptations and more frequent releases.
+## 4. AWS Developer Tools for DevOps:
 
+### AWS provides a suite of developer tools to support DevOps practices, including AWS CodeCommit, AWS CodeBuild, AWS CodeDeploy, and AWS CodePipeline.
 
+## 5. Essential Knowledge for DevOps Professionals:
+### Understanding of the Linux operating system and source control (Git) is highly beneficial.
+###  Familiarity with cloud infrastructure and services, particularly AWS, is crucial.
 
-4. AWS Developer Tools for DevOps:
-AWS provides a suite of developer tools to support DevOps practices, including AWS CodeCommit, AWS CodeBuild, AWS CodeDeploy, and AWS CodePipeline.
-
-
-
-5. Essential Knowledge for DevOps Professionals:
-Understanding of the Linux operating system and source control (Git) is highly beneficial.
-
-Familiarity with cloud infrastructure and services, particularly AWS, is crucial.
-
-
-
-6. Why Choose DevOps:
-DevOps practices lead to fewer software failures and shortened time between fixes.
-
-It promotes a culture of collaboration, leading to more innovative solutions and a happier, more productive team.
+## 6. Why Choose DevOps:
+### DevOps practices lead to fewer software failures and shortened time between fixes.
+### It promotes a culture of collaboration, leading to more innovative solutions and a happier, more productive team.
 
 
 
