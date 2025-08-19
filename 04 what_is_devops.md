@@ -30,43 +30,26 @@
 ### DevOps practices lead to fewer software failures and shortened time between fixes.
 ### It promotes a culture of collaboration, leading to more innovative solutions and a happier, more productive team.
 
+## 7. Stages of Traditional SDLC:
+### Requirement Gathering: Understanding what is needed.
+### Analysis: Analyzing the feasibility and details.
+### Design: Creating a blueprint or plan.
+### Implementation (Coding): Writing the actual code.
+### Testing: Ensuring functionality and quality.
+### Deployment: Releasing the product to users.
+### Maintenance: Ongoing support and updates.
 
+## 8. Continuous Integration & Continuous Deployment (CI/CD):
+### CI/CD are cornerstone practices in DevOps for automating and streamlining the pipeline from code commit to production deployment.
+### They help in maintaining code quality and ensuring that the software can be reliably released at any time.
 
-7. Stages of Traditional SDLC:
-Requirement Gathering: Understanding what is needed.
+## 9. Monitoring and Infrastructure as Code:
+### Monitoring: Continuous monitoring is essential for understanding the health of applications and infrastructure.
+### Infrastructure as Code (IaC): Manage and provision infrastructure through code, improving deployment speed and consistency.
 
-Analysis: Analyzing the feasibility and details.
-
-Design: Creating a blueprint or plan.
-
-Implementation (Coding): Writing the actual code.
-
-Testing: Ensuring functionality and quality.
-
-Deployment: Releasing the product to users.
-
-Maintenance: Ongoing support and updates.
-
-
-
-8. Continuous Integration & Continuous Deployment (CI/CD):
-CI/CD are cornerstone practices in DevOps for automating and streamlining the pipeline from code commit to production deployment.
-
-They help in maintaining code quality and ensuring that the software can be reliably released at any time.
-
-
-
-9. Monitoring and Infrastructure as Code:
-Monitoring: Continuous monitoring is essential for understanding the health of applications and infrastructure.
-
-Infrastructure as Code (IaC): Manage and provision infrastructure through code, improving deployment speed and consistency.
-
-
-
-10. Adopting DevOps:
-Not mandatory for every project, but beneficial for those requiring rapid development, deployment, and innovation.
-
-A cultural shift towards collaboration, shared responsibility, and quality assurance is necessary.
+## 10. Adopting DevOps:
+### Not mandatory for every project, but beneficial for those requiring rapid development, deployment, and innovation.
+### A cultural shift towards collaboration, shared responsibility, and quality assurance is necessary.
 
 
 
