@@ -1,4 +1,4 @@
-**1. What is DevOps?**
+## 1. What is DevOps?**
 
 ### DevOps is a set of practices that combines software development (Dev) and IT operations (Ops). 
 ### It aims to shorten the system development life cycle and provide continuous delivery with high software quality.
@@ -6,18 +6,15 @@
 
 
 
-**2. Key Principles of DevOps:**
+## 2. Key Principles of DevOps:
 ### Automation: Automate repetitive tasks to reduce errors and free up time for more complex problems.
-
-Continuous Integration (CI): Regularly merge code changes into a central repository where builds and tests are executed.
-
-Continuous Deployment (CD): Automatically deploy all code changes to the production environment after passing tests.
-
-Monitoring & Feedback: Continuously monitor application performance and user feedback to quickly resolve issues.
+### Continuous Integration (CI): Regularly merge code changes into a central repository where builds and tests are executed.
+### Continuous Deployment (CD): Automatically deploy all code changes to the production environment after passing tests.
+### Monitoring & Feedback: Continuously monitor application performance and user feedback to quickly resolve issues.
 
 
 
-3. Traditional SDLC vs DevOps:
+## 3. Traditional SDLC vs DevOps:
 Traditional SDLC (Software Development Life Cycle) follows a linear and sequential approach known as the Waterfall model.
 
 DevOps encourages an iterative and incremental approach, allowing for quicker adaptations and more frequent releases.
