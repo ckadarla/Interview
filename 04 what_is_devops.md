@@ -52,11 +52,8 @@
 ### A cultural shift towards collaboration, shared responsibility, and quality assurance is necessary.
 
 
-
-Printable Summary:
-Remember, DevOps is about integrating development and operations to improve collaboration and efficiency.
-
-Familiarize yourself with CI/CD, automation tools, and AWS Developer Tools for a robust DevOps practice.
-
-Continuous learning and adaptation are key in the ever-evolving field of DevOps.
+## Printable Summary:
+#### Remember, DevOps is about integrating development and operations to improve collaboration and efficiency.
+#### Familiarize yourself with CI/CD, automation tools, and AWS Developer Tools for a robust DevOps practice.
+#### Continuous learning and adaptation are key in the ever-evolving field of DevOps.
 
