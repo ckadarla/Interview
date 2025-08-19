@@ -1,14 +1,13 @@
 **1. What is DevOps?**
-DevOps is a set of practices that combines software development (Dev) and IT operations (Ops).
 
-It aims to shorten the system development life cycle and provide continuous delivery with high software quality.
-
-Key goals include improving collaboration between teams, enhancing deployment frequency, and ensuring a faster time to market.
-
+### DevOps is a set of practices that combines software development (Dev) and IT operations (Ops). 
+### It aims to shorten the system development life cycle and provide continuous delivery with high software quality.
+### Key goals include improving collaboration between teams, enhancing deployment frequency, and ensuring a faster time to market.
 
 
-2. Key Principles of DevOps:
-Automation: Automate repetitive tasks to reduce errors and free up time for more complex problems.
+
+**2. Key Principles of DevOps:**
+### Automation: Automate repetitive tasks to reduce errors and free up time for more complex problems.
 
 Continuous Integration (CI): Regularly merge code changes into a central repository where builds and tests are executed.
 
