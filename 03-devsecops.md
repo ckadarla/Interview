@@ -1,8 +1,3 @@
-Got it ✅ — you’re preparing for interviews targeting a **Senior DevSecOps Engineer** type role (AWS + Azure, Terraform, Wiz, IAM guardrails, compliance, vulnerability remediation).
-I’ll draft **interview questions and answers** based on the JD you shared.
-
----
-
 ## 🔹 Technical Interview Questions & Answers
 
 ### 1. **How would you implement DevSecOps in a hybrid AWS–Azure environment?**
