@@ -1,8 +1,3 @@
-Here's a markdown-formatted document containing 50 interview questions and answers tailored to the job description you provided. The questions cover cloud provisioning, Kubernetes, observability, automation, CI/CD, and related technologies.
-
-📄 Filename: interview\_questions.md
-
-interview\_questions.md:
 
 # DevOps/Kubernetes/SRE Interview Questions and Answers
 
